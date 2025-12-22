@@ -1,44 +1,29 @@
-import './About.css'
-
 export default function About() {
   return (
     <section id="about" className="about">
-      <div className="app-container">
-        <h2>About Me</h2>
-        <div className="about-content">
-          <div className="about-text">
-            <p>
-              I'm a passionate web developer with a love for creating beautiful and functional digital experiences. 
-              With expertise in modern web technologies, I craft responsive websites and applications that users love.
-            </p>
-            <p>
-              When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, 
-              or enjoying the great outdoors.
-            </p>
-            <div className="skills">
-              <h3>Skills</h3>
-              <div className="skills-grid">
-                <div className="skill-item">
-                  <h4>Frontend</h4>
-                  <ul>
-                    <li>React</li>
-                    <li>JavaScript/ES6+</li>
-                    <li>HTML5 & CSS3</li>
-                    <li>Responsive Design</li>
-                  </ul>
-                </div>
-                <div className="skill-item">
-                  <h4>Tools & Platforms</h4>
-                  <ul>
-                    <li>Git & GitHub</li>
-                    <li>Vite</li>
-                    <li>VS Code</li>
-                    <li>Webpack</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+      <h2>About Me</h2>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px' }}>
+        <div>
+          <h3 style={{ marginBottom: '15px' }}>Professional Summary</h3>
+          <p style={{ marginBottom: '15px' }}>
+            Experienced IT professional with a proven track record of leading technical teams and implementing 
+            large-scale infrastructure solutions. Passionate about solving complex technical challenges and 
+            driving organizational efficiency through innovative endpoint management strategies.
+          </p>
+          <p>
+            Dedicated to continuous learning and staying current with emerging technologies in the enterprise IT space.
+          </p>
+        </div>
+        <div>
+          <h3 style={{ marginBottom: '15px' }}>Core Competencies</h3>
+          <ul style={{ listStyleType: 'none', padding: 0 }}>
+            <li style={{ marginBottom: '8px', color: '#a0a8ff' }}>• Technical Team Leadership</li>
+            <li style={{ marginBottom: '8px', color: '#a0a8ff' }}>• Enterprise Endpoint Management</li>
+            <li style={{ marginBottom: '8px', color: '#a0a8ff' }}>• Infrastructure Architecture</li>
+            <li style={{ marginBottom: '8px', color: '#a0a8ff' }}>• Systems Administration</li>
+            <li style={{ marginBottom: '8px', color: '#a0a8ff' }}>• Strategic Planning</li>
+            <li style={{ marginBottom: '8px', color: '#a0a8ff' }}>• Cross-functional Collaboration</li>
+          </ul>
         </div>
       </div>
     </section>

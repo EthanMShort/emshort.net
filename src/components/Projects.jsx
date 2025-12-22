@@ -1,50 +1,60 @@
-import './Projects.css'
-
-const projectData = [
-  {
-    id: 1,
-    title: 'Project One',
-    description: 'A modern web application built with React and Vite',
-    technologies: ['React', 'JavaScript', 'CSS'],
-    link: '#'
-  },
-  {
-    id: 2,
-    title: 'Project Two',
-    description: 'Full-stack application with backend integration',
-    technologies: ['React', 'Node.js', 'MongoDB'],
-    link: '#'
-  },
-  {
-    id: 3,
-    title: 'Project Three',
-    description: 'Responsive design project with advanced styling',
-    technologies: ['HTML', 'CSS', 'JavaScript'],
-    link: '#'
-  }
-]
-
 export default function Projects() {
+  const projectData = [
+    {
+      id: 1,
+      title: 'Infrastructure Migration',
+      description: 'Led enterprise-wide infrastructure migration to cloud-based solutions',
+      technologies: ['Cloud Services', 'Azure', 'System Admin'],
+      impact: 'Reduced infrastructure costs by 35%'
+    },
+    {
+      id: 2,
+      title: 'Endpoint Management System',
+      description: 'Designed and implemented centralized endpoint management platform',
+      technologies: ['Active Directory', 'Group Policy', 'MDM'],
+      impact: '500+ devices under unified management'
+    },
+    {
+      id: 3,
+      title: 'Support Ticketing System',
+      description: 'Optimized IT support workflows with advanced ticketing automation',
+      technologies: ['Automation', 'Process Design', 'Documentation'],
+      impact: '45% improvement in resolution time'
+    }
+  ]
+
   return (
     <section id="projects" className="projects">
-      <div className="app-container">
-        <h2>My Projects</h2>
-        <div className="projects-grid">
-          {projectData.map(project => (
-            <div key={project.id} className="project-card">
-              <div className="project-header">
-                <h3>{project.title}</h3>
-              </div>
-              <p className="project-description">{project.description}</p>
-              <div className="project-tech">
+      <h2>Featured Projects</h2>
+      <div className="card-grid">
+        {projectData.map(project => (
+          <div key={project.id} className="card">
+            <h4>{project.title}</h4>
+            <p style={{ marginBottom: '12px' }}>{project.description}</p>
+            <div style={{ marginBottom: '15px' }}>
+              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '10px' }}>
                 {project.technologies.map((tech, idx) => (
-                  <span key={idx} className="tech-tag">{tech}</span>
+                  <span
+                    key={idx}
+                    style={{
+                      fontSize: '11px',
+                      padding: '4px 8px',
+                      background: 'rgba(0, 102, 255, 0.2)',
+                      border: '1px solid #0066ff',
+                      borderRadius: '3px',
+                      color: '#00ffff'
+                    }}
+                  >
+                    {tech}
+                  </span>
                 ))}
               </div>
-              <a href={project.link} className="btn btn-secondary">View Project</a>
+              <p style={{ fontSize: '12px', color: '#00ffff', fontStyle: 'italic' }}>
+                {project.impact}
+              </p>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   )

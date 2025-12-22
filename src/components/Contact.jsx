@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './Contact.css'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -8,94 +7,120 @@ export default function Contact() {
     message: ''
   })
 
-  const [submitted, setSubmitted] = useState(false)
-
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Here you would typically send the form data to a backend
+    // Handle form submission here
     console.log('Form submitted:', formData)
-    setSubmitted(true)
+    // Reset form
     setFormData({ name: '', email: '', message: '' })
-    setTimeout(() => setSubmitted(false), 3000)
   }
 
   return (
     <section id="contact" className="contact">
-      <div className="app-container">
-        <h2>Get In Touch</h2>
-        <p className="contact-intro">
-          Have a project in mind or want to collaborate? Feel free to reach out!
-        </p>
-
-        <div className="contact-content">
-          <div className="contact-info">
-            <div className="info-item">
-              <h4>Email</h4>
-              <a href="mailto:your.email@example.com">your.email@example.com</a>
-            </div>
-            <div className="info-item">
-              <h4>Social</h4>
-              <div className="social-links">
-                <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
-              </div>
-            </div>
+      <h2>Get In Touch</h2>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px' }}>
+        <div>
+          <h3 style={{ marginBottom: '20px' }}>Contact Information</h3>
+          <div style={{ marginBottom: '20px' }}>
+            <p style={{ color: '#00ffff', marginBottom: '5px' }}>Email:</p>
+            <a href="mailto:your.email@example.com" style={{ color: '#a0a8ff', textDecoration: 'none' }}>
+              your.email@example.com
+            </a>
           </div>
-
-          <form className="contact-form" onSubmit={handleSubmit}>
-            {submitted && (
-              <div className="success-message">
-                ✓ Thanks for your message! I'll get back to you soon.
-              </div>
-            )}
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                placeholder="Your name"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                placeholder="your@email.com"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows="5"
-                placeholder="Your message..."
-              ></textarea>
-            </div>
-            <button type="submit" className="btn btn-primary">Send Message</button>
-          </form>
+          <div style={{ marginBottom: '20px' }}>
+            <p style={{ color: '#00ffff', marginBottom: '5px' }}>LinkedIn:</p>
+            <a href="https://linkedin.com/in/ethan-m-short" target="_blank" rel="noopener noreferrer" style={{ color: '#a0a8ff', textDecoration: 'none' }}>
+              linkedin.com/in/ethan-m-short
+            </a>
+          </div>
+          <div>
+            <p style={{ color: '#00ffff', marginBottom: '5px' }}>Response Time:</p>
+            <p style={{ color: '#a0a8ff' }}>Usually within 24 hours</p>
+          </div>
         </div>
+
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+          <div>
+            <label htmlFor="name" style={{ display: 'block', marginBottom: '5px', color: '#00ffff' }}>
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              style={{
+                width: '100%',
+                padding: '10px 12px',
+                border: '1px solid #0066ff',
+                borderRadius: '4px',
+                background: 'rgba(20, 24, 41, 0.7)',
+                color: '#e0e6ff',
+                fontFamily: 'inherit',
+                fontSize: '14px'
+              }}
+            />
+          </div>
+          <div>
+            <label htmlFor="email" style={{ display: 'block', marginBottom: '5px', color: '#00ffff' }}>
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              style={{
+                width: '100%',
+                padding: '10px 12px',
+                border: '1px solid #0066ff',
+                borderRadius: '4px',
+                background: 'rgba(20, 24, 41, 0.7)',
+                color: '#e0e6ff',
+                fontFamily: 'inherit',
+                fontSize: '14px'
+              }}
+            />
+          </div>
+          <div>
+            <label htmlFor="message" style={{ display: 'block', marginBottom: '5px', color: '#00ffff' }}>
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              rows="5"
+              style={{
+                width: '100%',
+                padding: '10px 12px',
+                border: '1px solid #0066ff',
+                borderRadius: '4px',
+                background: 'rgba(20, 24, 41, 0.7)',
+                color: '#e0e6ff',
+                fontFamily: 'inherit',
+                fontSize: '14px',
+                resize: 'vertical'
+              }}
+            />
+          </div>
+          <button type="submit" className="btn btn-primary" style={{ alignSelf: 'flex-start' }}>
+            Send Message
+          </button>
+        </form>
       </div>
     </section>
   )
