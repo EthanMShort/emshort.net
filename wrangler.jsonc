@@ -1,9 +1,11 @@
 {
-  "name": "your-project-name",
+  "name": "emshort-web", // Match the CI name from your logs
   "compatibility_date": "2025-12-24",
   "assets": {
     "directory": "./" 
   },
+  "workers_dev": true,
+  "preview_urls": true,
   "routes": [
     { "pattern": "emshort.net", "custom_domain": true },
     { "pattern": "www.emshort.net", "custom_domain": true }
