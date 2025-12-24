@@ -1,7 +1,11 @@
 {
-  "name": "emshort-web",
+  "name": "your-project-name",
   "compatibility_date": "2025-12-24",
   "assets": {
     "directory": "./" 
-  }
+  },
+  "routes": [
+    { "pattern": "emshort.net", "custom_domain": true },
+    { "pattern": "www.emshort.net", "custom_domain": true }
+  ]
 }
