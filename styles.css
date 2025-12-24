@@ -195,7 +195,6 @@ body {
 
 /* Sections */
 section {
-  /* margin-bottom: 100px; */
   scroll-margin-top: 100px;
 }
 
@@ -220,15 +219,12 @@ section h2::after {
 
 /* Hero Section */
 .hero {
-  min-hight: 200px;
+  min-height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: left;
-  padding-top: 10px;
-  padding-right: 0px;
-  padding-bottom: 40px;
-  padding-left: 0px;
+  padding: 10px 0 40px 0;
 }
 
 .hero h1 {
@@ -356,36 +352,93 @@ input:focus, textarea:focus {
   box-shadow: 0 0 15px rgba(0, 102, 255, 0.3) !important;
 }
 
-/* Responsive */
+/* --- Optimized Responsive Overrides --- */
+
 @media (max-width: 768px) {
+  /* 1. Reset the App Layout from Flex-Row to Block */
   .app {
-    flex-direction: column;
+    display: block; 
+    height: auto;
+    overflow-y: visible;
   }
 
+  /* 2. Transform Sidebar into a Scrollable Top Header */
   .sidebar {
     width: 100%;
     height: auto;
+    position: relative; /* Removes fixed positioning for flow */
     border-right: none;
     border-bottom: 1px solid var(--border-color);
-    position: relative;
     padding: 20px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   }
 
+  .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Center the profile info for mobile */
+  .profile-card {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 3. Horizontal Navigation Row */
+  .nav-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+
+  .nav-links a {
+    padding: 8px 12px;
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    font-size: 14px;
+  }
+
+  .nav-links a:hover, .nav-links a.active {
+    border-left-color: transparent;
+    border-bottom-color: var(--primary-blue);
+    background-color: rgba(0, 102, 255, 0.1);
+  }
+
+  /* 4. Reset Main Content Margin */
   .main-content {
     margin-left: 0;
     padding: 40px 20px;
+    width: 100%;
   }
 
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-
+  /* 5. Mobile Typography Adjustments */
   .hero h1 {
-    font-size: 36px;
+    font-size: 32px !important;
+    text-align: center;
+  }
+
+  .hero p {
+    text-align: center;
+  }
+
+  /* Center hero buttons */
+  .hero div[style*="display: flex"] {
+    justify-content: center;
   }
 
   section h2 {
     font-size: 28px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -395,11 +448,11 @@ input:focus, textarea:focus {
   }
 
   .main-content {
-    padding: 20px 15px;
+    padding: 30px 15px;
   }
 
   .hero h1 {
-    font-size: 28px;
+    font-size: 28px !important;
   }
 
   section {
