@@ -195,7 +195,7 @@ body {
 
 /* Sections */
 section {
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
   scroll-margin-top: 100px;
 }
 
@@ -220,7 +220,6 @@ section h2::after {
 
 /* Hero Section */
 .hero {
-  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
