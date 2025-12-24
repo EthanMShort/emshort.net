@@ -1,13 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ethan Short - Portfolio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <!-- Profile Card -->
+                <div class="profile-card">
+                    <div class="profile-image">
+                        <img src="" alt="Profile" style="display: none;">
+                        <span>👤</span>
+                    </div>
+                    <div class="profile-info">
+                        <h1>Ethan Short</h1>
+                        <p class="job-title">Endpoint Support Lead Tech</p>
+                        <p class="status">Available for opportunities</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="nav-links">
+                    <a href="#home" class="active">Home</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+
+                <!-- Social Links -->
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/ethan-m-short" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section id="home" class="hero">
+                <div style="max-width: 100%;">
+                    <h1 style="font-size: 48px; margin-bottom: 20px;">Welcome to My Portfolio</h1>
+                    <p style="font-size: 18px; color: #a0a8ff; margin-bottom: 30px; line-height: 1.8;">
+                        I'm Ethan Short, an Endpoint Support Lead Tech with expertise in technical infrastructure, 
+                        system administration, and team leadership. Specializing in enterprise IT support and solutions.
+                    </p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <button class="btn btn-primary" onclick="document.getElementById('experience').scrollIntoView({ behavior: 'smooth' })">
+                            View Experience
+                        </button>
+                        <button class="btn" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
+                            Get in Touch
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="experience">
+                <h2>Experience</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Endpoint Support Lead Tech</h3>
+                        <p style="color: #00ffff; margin-bottom: 10px;">Current Role</p>
+                        <p>Leading technical infrastructure teams and managing enterprise-wide endpoint solutions with a focus on system reliability and user support.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Systems Administrator</h3>
+                        <p style="color: #00ffff; margin-bottom: 10px;">Previous Role</p>
+                        <p>Managed Windows and Linux environments, implemented security policies, and optimized network infrastructure for enterprise deployments.</p>
+                    </div>
+                    <div class="card">
+                        <h3>IT Support Specialist</h3>
+                        <p style="color: #00ffff; margin-bottom: 10px;">Earlier Role</p>
+                        <p>Provided technical support to end-users, troubleshot hardware/software issues, and maintained IT documentation and best practices.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="projects">
+                <h2>Featured Projects</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>Infrastructure Migration</h4>
+                        <p style="margin-bottom: 12px;">Led enterprise-wide infrastructure migration to cloud-based solutions</p>
+                        <div style="margin-bottom: 15px;">
+                            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px;">
+                                <span class="tech-tag">Cloud Services</span>
+                                <span class="tech-tag">Azure</span>
+                                <span class="tech-tag">System Admin</span>
+                            </div>
+                            <p style="font-size: 14px; color: #00ffff;">Impact: Reduced infrastructure costs by 35%</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h4>Endpoint Management System</h4>
+                        <p style="margin-bottom: 12px;">Designed and implemented centralized endpoint management platform</p>
+                        <div style="margin-bottom: 15px;">
+                            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px;">
+                                <span class="tech-tag">Active Directory</span>
+                                <span class="tech-tag">Group Policy</span>
+                                <span class="tech-tag">MDM</span>
+                            </div>
+                            <p style="font-size: 14px; color: #00ffff;">Impact: 500+ devices under unified management</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h4>Support Ticketing System</h4>
+                        <p style="margin-bottom: 12px;">Optimized IT support workflows with advanced ticketing automation</p>
+                        <div style="margin-bottom: 15px;">
+                            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px;">
+                                <span class="tech-tag">Automation</span>
+                                <span class="tech-tag">Process Design</span>
+                                <span class="tech-tag">Documentation</span>
+                            </div>
+                            <p style="font-size: 14px; color: #00ffff;">Impact: 45% improvement in resolution time</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="about">
+                <h2>About Me</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                    <div>
+                        <h3 style="margin-bottom: 15px;">Professional Summary</h3>
+                        <p style="margin-bottom: 15px;">
+                            Experienced IT professional with a proven track record of leading technical teams and implementing 
+                            large-scale infrastructure solutions. Passionate about solving complex technical challenges and 
+                            driving organizational efficiency through innovative endpoint management strategies.
+                        </p>
+                        <p>
+                            Dedicated to continuous learning and staying current with emerging technologies in the enterprise IT space.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 15px;">Core Competencies</h3>
+                        <ul style="list-style-type: none; padding: 0;">
+                            <li style="margin-bottom: 8px; color: #a0a8ff;">• Technical Team Leadership</li>
+                            <li style="margin-bottom: 8px; color: #a0a8ff;">• Enterprise Endpoint Management</li>
+                            <li style="margin-bottom: 8px; color: #a0a8ff;">• Infrastructure Architecture</li>
+                            <li style="margin-bottom: 8px; color: #a0a8ff;">• Systems Administration</li>
+                            <li style="margin-bottom: 8px; color: #a0a8ff;">• Strategic Planning</li>
+                            <li style="margin-bottom: 8px; color: #a0a8ff;">• Cross-functional Collaboration</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact">
+                <h2>Get In Touch</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                    <div>
+                        <h3 style="margin-bottom: 20px;">Contact Information</h3>
+                        <div style="margin-bottom: 20px;">
+                            <p style="color: #00ffff; margin-bottom: 5px;">Email:</p>
+                            <a href="mailto:your.email@example.com" style="color: #a0a8ff; text-decoration: none;">
+                                your.email@example.com
+                            </a>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <p style="color: #00ffff; margin-bottom: 5px;">LinkedIn:</p>
+                            <a href="https://linkedin.com/in/ethan-m-short" target="_blank" rel="noopener noreferrer" style="color: #a0a8ff; text-decoration: none;">
+                                linkedin.com/in/ethan-m-short
+                            </a>
+                        </div>
+                        <div>
+                            <p style="color: #00ffff; margin-bottom: 5px;">Response Time:</p>
+                            <p style="color: #a0a8ff;">Usually within 24 hours</p>
+                        </div>
+                    </div>
+
+                    <form style="display: flex; flex-direction: column; gap: 15px;">
+                        <div>
+                            <label for="name" style="display: block; margin-bottom: 5px; color: #a0a8ff;">Name</label>
+                            <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; background: #1a1f3a; border: 1px solid #003366; color: #e0e6ff; border-radius: 5px;">
+                        </div>
+                        <div>
+                            <label for="email" style="display: block; margin-bottom: 5px; color: #a0a8ff;">Email</label>
+                            <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; background: #1a1f3a; border: 1px solid #003366; color: #e0e6ff; border-radius: 5px;">
+                        </div>
+                        <div>
+                            <label for="message" style="display: block; margin-bottom: 5px; color: #a0a8ff;">Message</label>
+                            <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 10px; background: #1a1f3a; border: 1px solid #003366; color: #e0e6ff; border-radius: 5px; font-family: inherit;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
 </html>

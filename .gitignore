@@ -1,5 +1,19 @@
+# Dependencies (if reinstalling)
 node_modules/
-.DS_Store
-*.log
+
+# Environment
+.env
 .env.local
 .env.*.local
+
+# OS
+.DS_Store
+.windows-build-tools
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
