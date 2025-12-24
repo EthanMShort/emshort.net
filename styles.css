@@ -220,6 +220,7 @@ section h2::after {
 
 /* Hero Section */
 .hero {
+  min-hight: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
