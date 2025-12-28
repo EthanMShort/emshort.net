@@ -1,114 +1,368 @@
-/* Global Styles - Severance / Modern Clean Aesthetic */
+/* =========================================
+   Theme: Modern Minimalist / "Severance"
+   Author: Ethan Short (and Gemini Pro AI)
+   ========================================= */
 
 :root {
-  --primary-accent: #0071e3; /* Apple Blue */
-  --bg-main: #ffffff;
-  --bg-sidebar: #f5f5f7;
-  --card-bg: #ffffff;
-  --text-primary: #1d1d1f;
-  --text-secondary: #86868b;
-  --border-color: #d2d2d7;
-  --sidebar-border: #e6e6e8;
+  /* Palette - Clean, Clinical, Professional */
+  --bg-body: #ffffff;
+  --bg-sidebar: #fbfbfd; /* Very subtle off-white for separation */
+  --bg-card: #ffffff;
+  
+  /* Typography Colors */
+  --text-primary: #1d1d1f;   /* Almost black, softer than #000 */
+  --text-secondary: #86868b; /* Apple-style muted gray */
+  --text-accent: #0071e3;    /* Professional Tech Blue */
+  
+  /* UI Elements */
+  --border-subtle: #d2d2d7;
+  --border-focus: #0071e3;
+  --shadow-sm: 0 4px 6px rgba(0,0,0,0.02);
+  --shadow-hover: 0 12px 24px rgba(0,0,0,0.08);
+  
+  /* Dimensions */
+  --sidebar-width: 280px;
 }
 
+/* --- Reset & Global --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
-  background-color: var(--bg-main);
-  color: var(--text-primary);
-  line-height: 1.5;
+html {
+  scroll-behavior: smooth;
 }
 
-/* Sidebar Update */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased; /* Crisp text rendering */
+}
+
+/* --- Layout Structure --- */
+.app {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* --- Sidebar (Fixed Left) --- */
 .sidebar {
-  width: 280px;
+  width: var(--sidebar-width);
   background: var(--bg-sidebar);
-  border-right: 1px solid var(--sidebar-border);
+  border-right: 1px solid var(--border-subtle);
   position: fixed;
   height: 100vh;
   left: 0;
   top: 0;
-  z-index: 1000;
+  padding: 60px 30px 30px 30px; /* High top padding for breathing room */
+  overflow-y: auto;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Profile Section */
+.profile-card {
+  margin-bottom: 40px;
+}
+
+.profile-image {
+  width: 64px;
+  height: 64px;
+  background-color: #e5e5ea;
+  border-radius: 50%; /* Circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.profile-info h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
 }
 
 .job-title {
-  color: var(--primary-accent); /* Blue highlight on the title */
-  font-size: 11px;
-  letter-spacing: 0.05em;
-}
-
-/* Main Content Update */
-.main-content {
-  margin-left: 280px;
-  padding: 80px;
-  background: var(--bg-main);
-}
-
-/* Hero Typography Enhancement */
-.hero-eyebrow {
-  color: var(--primary-accent);
+  color: var(--text-accent);
+  font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 14px;
-  margin-bottom: 12px;
-  letter-spacing: 1px;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
 }
 
-.hero-title {
-  font-size: 48px;
-  font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1.1;
-  margin-bottom: 24px;
-  letter-spacing: -0.02em;
-}
-
-.hero-description {
-  font-size: 21px;
+.orgnization-title {
   color: var(--text-secondary);
-  margin-bottom: 40px;
-  max-width: 600px;
+  font-size: 13px;
+  margin-bottom: 12px;
 }
 
-/* Clean Card Design */
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 32px;
-  transition: all 0.2s ease-in-out;
-  box-shadow: none;
-}
-
-.card:hover {
-  border-color: #86868b;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-/* Button Refinement */
-.btn {
-  padding: 12px 24px;
-  border: 1px solid var(--border-color);
-  background-color: transparent;
-  color: var(--text-primary);
-  border-radius: 8px;
-  font-size: 14px;
+.status {
+  display: inline-block;
+  font-size: 12px;
+  color: #1d1d1f;
+  background: #e5e5ea;
+  padding: 4px 8px;
+  border-radius: 4px;
   font-weight: 500;
 }
 
+/* Navigation */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: auto; /* Pushes social links to bottom */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text-primary);
+  background-color: rgba(0,0,0,0.03);
+}
+
+.nav-links a.active {
+  color: var(--text-accent);
+  background-color: rgba(0, 113, 227, 0.08);
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.social-links a {
+  text-decoration: none;
+  font-size: 13px;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+
+.social-links a:hover {
+  color: var(--text-accent);
+  text-decoration: underline;
+}
+
+/* --- Main Content Area --- */
+.main-content {
+  margin-left: var(--sidebar-width); /* Crucial: Pushes content right */
+  width: calc(100% - var(--sidebar-width));
+  padding: 80px 10%; /* Comfortable reading width */
+  background-color: var(--bg-body);
+}
+
+/* Typography Helpers */
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 40px;
+  letter-spacing: -0.02em;
+  border-bottom: 1px solid #e5e5ea;
+  padding-bottom: 20px;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 60vh; /* Takes up decent screen space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.hero h1 {
+  font-size: 56px;
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.hero p {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin-bottom: 32px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 99px; /* Pill shape */
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
 .btn-primary {
-  background: var(--primary-accent);
+  background-color: var(--text-primary);
   color: white;
-  border: none;
 }
 
 .btn-primary:hover {
-  background: #0077ed;
-  box-shadow: none;
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
+.btn:not(.btn-primary) {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+}
+
+.btn:not(.btn-primary):hover {
+  border-color: var(--text-primary);
+}
+
+/* --- Experience & Projects Cards --- */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Stacked list for resume feel */
+  gap: 24px;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 32px;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--text-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.card h3, .card h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+/* Role / Tech Tags styling */
+.card p[style*="color: #00ffff"], 
+.card p[style*="color: #00ffff;"] {
+  /* Overriding inline styles from HTML for the "Role" text */
+  color: var(--text-accent) !important;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* Tech Tags */
+.tech-tag {
+  font-size: 12px;
+  padding: 6px 12px;
+  background-color: #f5f5f7;
+  color: var(--text-primary);
+  border-radius: 6px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+/* About Section Grid */
+.about div[style*="grid-template-columns"] {
+  /* Enhancing the grid from inline styles */
+  gap: 60px !important;
+}
+
+/* Contact Form */
+.contact input, 
+.contact textarea {
+  width: 100%;
+  padding: 16px;
+  background: #fbfbfd;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  transition: border 0.2s;
+}
+
+.contact input:focus, 
+.contact textarea:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  background: #fff;
+}
+
+.contact label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary) !important; /* Force override */
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 900px) {
+  /* Collapse Sidebar to Header */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 24px;
+  }
+  
+  .profile-image {
+    display: none; /* Hide image on mobile to save space */
+  }
+
+  .nav-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  
+  .nav-links a {
+    background: #f5f5f7;
+    font-size: 13px;
+  }
+
+  /* Reset Main Content */
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 40px 24px;
+  }
+
+  /* Adjust Typography */
+  .hero h1 {
+    font-size: 36px;
+  }
 }
