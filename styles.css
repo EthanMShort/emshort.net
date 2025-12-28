@@ -8,7 +8,7 @@
   /* --- The Lumon / IBM Palette --- */
   
   /* Primary Anchors */
-  --color-corporate-blue: #205ca9; /* Your requested Dark Blue */
+  --color-corporate-blue: #1c58a7; /* Your requested Dark Blue */
   --color-data-cyan: #205ca9;      /* Your requested Light Blue */
   
   /* Backgrounds */
@@ -30,7 +30,7 @@
   --radius-std: 4px; /* Sharper corners for that "Boxy" 80s feel */
 }
 
-/* --- Global Reset --- */
+/* --- Global Content --- */
 * {
   margin: 0;
   padding: 0;
@@ -87,14 +87,14 @@ html {
   font-family: var(--font-sans);
   font-size: 42px;
   font-weight: 700;
-  color: #ffffff; /* Adjusted to White for contrast on Light Blue */
+  color: var(--color-data-cyan)
   letter-spacing: -0.5px;
   margin-bottom: 8px;
 }
 
-.job-title {
+.profile-title {
   font-family: var(--font-mono); /* IBM Style */
-  color: var(--text-muted);
+  color: var(--color-data-cyan);
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -131,7 +131,7 @@ html {
 
 .nav-links a {
   text-decoration: none;
-  color: rgba(255,255,255,0.8);
+  color: var(--bg-body);
   font-size: 18px;
   font-weight: 500;
   transition: all 0.2s;
@@ -141,7 +141,7 @@ html {
 }
 
 .nav-links a:hover {
-  color: #ffffff;
+  color: var(--text-muted);
   padding-left: 5px; /* Subtle movement interaction */
 }
 
@@ -157,7 +157,7 @@ html {
 }
 
 .social-links a {
-  color: #ffffff;
+  color: var(--color-data-cyan);
   font-family: var(--font-mono);
   font-size: 14px;
   text-decoration: none;
@@ -287,7 +287,17 @@ h2 {
   margin-bottom: 10px;
 }
 
-/* --- New Feature: Status Flags --- */
+.job-title {
+  font-family: var(--font-mono); /* IBM Style */
+  color: var(--text-muted);
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* --- Status Flags --- */
 .status-flag {
   display: inline-block;
   font-family: var(--font-mono);
@@ -303,7 +313,7 @@ h2 {
   letter-spacing: 0.5px;
 }
 
-/* --- New Feature: Tech Tags --- */
+/* ---  Tech Tags --- */
 .tech-tag {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -314,7 +324,7 @@ h2 {
   background: #fbfbfd;
 }
 
-/* --- New Feature: Expandable Details --- */
+/* --- Expandable Details --- */
 details {
   margin-top: 15px;
   border-top: 1px solid var(--border-subtle);
@@ -324,7 +334,7 @@ details {
 summary {
   cursor: pointer;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 14px;
   color: var(--color-corporate-blue);
   font-weight: 700;
   outline: none;
