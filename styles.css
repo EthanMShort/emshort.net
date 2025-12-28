@@ -9,21 +9,21 @@
   
   /* Primary Anchors */
   --color-corporate-blue: #205ca9; /* Your requested Dark Blue */
-  --color-data-cyan: #43b1e5;      /* Your requested Light Blue */
+  --color-data-cyan: #205ca9;      /* Your requested Light Blue */
   
   /* Backgrounds */
   --bg-body: #f0f2f5;              /* Cool "Office Wall" Grey */
-  --bg-sidebar: #205ca9;           /* Deep Corporate Blue */
+  --bg-sidebar: #43b1e5;           /* Light Corporate Blue */
   --bg-card: #ffffff;              /* Crisp White Paper */
   
   /* Typography */
-  --text-main: #1a202c;            /* Near Black for readability */
+  --text-main: #205ca9;            /* Dark Blue for readability */
   --text-muted: #586980;           /* Slate Grey for secondary text */
   --text-on-blue: #e8f1fc;         /* White-ish blue for sidebar text */
   
   /* Fonts */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: 'Courier New', Courier, monospace; /* The "Terminal" vibe */
+  --font-sans: 'Helvetica', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'Roboto', monospace; /* The "Terminal" vibe */
   
   /* UI details */
   --border-subtle: #dce2e8;
@@ -52,8 +52,8 @@ body {
 
 /* --- The "Big Blue" Sidebar --- */
 .sidebar {
-  width: 280px;
-  background-color: var(--color-corporate-blue);
+  width: 380px;
+  background-color: var(--bg-sidebar);
   color: var(--text-on-blue);
   position: fixed;
   height: 100vh;
@@ -68,8 +68,9 @@ body {
 
 /* Profile Section */
 .profile-card {
-  margin-bottom: 50px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 30px;
+  border-bottom: 1px solid;
+  color: var(--color-data-cyan);
   padding-bottom: 30px;
 }
 
@@ -80,7 +81,7 @@ body {
 
 .profile-info h1 {
   font-family: var(--font-sans);
-  font-size: 24px;
+  font-size: 42px;
   font-weight: 700;
   color: #ffffff;
   letter-spacing: -0.5px;
@@ -90,7 +91,7 @@ body {
 .job-title {
   font-family: var(--font-mono); /* IBM Style */
   color: var(--color-data-cyan);
-  font-size: 11px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 4px;
@@ -98,8 +99,8 @@ body {
 }
 
 .orgnization-title {
-  font-size: 13px;
-  color: rgba(255,255,255,0.7);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.884);
   font-weight: 400;
 }
 
@@ -107,8 +108,8 @@ body {
   display: inline-block;
   margin-top: 15px;
   font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--color-corporate-blue);
+  font-size: 12px;
+  color: var(--border-subtle);
   background: var(--color-data-cyan);
   padding: 4px 8px;
   border-radius: 2px;
@@ -121,12 +122,13 @@ body {
   flex-direction: column;
   gap: 12px;
   margin-bottom: auto;
+  justify-content: center;
 }
 
 .nav-links a {
   text-decoration: none;
   color: rgba(255,255,255,0.7);
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
   transition: all 0.2s;
   padding: 8px 0;
@@ -153,7 +155,7 @@ body {
 .social-links a {
   color: var(--color-data-cyan);
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 14px;
   text-decoration: none;
   border-bottom: 1px solid transparent;
 }
@@ -166,7 +168,7 @@ body {
 .main-content {
   margin-left: 280px;
   width: calc(100% - 280px);
-  padding: 80px 10%;
+  padding: 40px 10%;
   background-color: var(--bg-body);
 }
 
@@ -183,11 +185,11 @@ h2 {
 
 /* Hero Section */
 .hero {
-  min-height: 50vh;
+  min-height: 28vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 80px;
+  margin-bottom: 35px;
 }
 
 .hero-eyebrow {
@@ -211,7 +213,7 @@ h2 {
 .hero p {
   font-size: 18px;
   color: var(--text-muted);
-  max-width: 650px;
+  max-width: 900px;
   margin-bottom: 35px;
 }
 
