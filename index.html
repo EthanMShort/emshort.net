@@ -3,202 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethan Short - Portfolio</title>
+    <title>Ethan Short - Technical Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="app">
-        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-content">
-                <!-- Profile Card -->
                 <div class="profile-card">
-                    <div class="profile-image">
-                        <img src="" alt="Profile" style="display: none;">
-                        <span>👤</span>
-                    </div>
                     <div class="profile-info">
                         <h1>Ethan Short</h1>
-                        <p class="job-title">Computer Networking & Telecommunications Management</p>
-                        <p class="orgnization-title">Illinois State University - May 2027</p>
-                        <p class="status">Available for opportunities</p>
+                        <p class="job-title">Endpoint Support Lead</p>
+                        <p class="orgnization-title">Illinois State University</p>
+                        <p class="status">Available for Opportunities</p>
                     </div>
                 </div>
 
-                <!-- Navigation Links -->
                 <nav class="nav-links">
-                    <a href="#home" class="active">Home</a>
+                    <a href="#home">Home</a>
                     <a href="#experience">Experience</a>
                     <a href="#projects">Projects</a>
+                    <a href="#awards">Awards</a>
                     <a href="#about">About</a>
                     <a href="#contact">Contact</a>
                 </nav>
 
-                <!-- Social Links -->
                 <div class="social-links">
-                    <a href="https://linkedin.com/in/ethan-m-short" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://linkedin.com/in/ethan-m-short" target="_blank">LinkedIn</a>
+                    <a href="https://github.com" target="_blank">GitHub</a>
                 </div>
             </div>
         </aside>
 
-        <!-- Main Content -->
         <main class="main-content">
-            <!-- Hero Section -->
             <section id="home" class="hero">
-                <div style="max-width: 100%;">
-                    <h1 style="font-size: 48px; margin-bottom: 20px;">Welcome to My Portfolio</h1>
-                    <p style="font-size: 18px; color: #a0a8ff; margin-bottom: 30px; line-height: 1.8;">
-                        I'm Ethan Short, an Endpoint Support Lead Tech with expertise in technical infrastructure, 
-                        system administration, and team leadership. Specializing in enterprise IT support and solutions.
+                <div>
+                    <p class="hero-eyebrow">Technical Infrastructure & Operations</p>
+                    <h1>Operational Excellence in Endpoint Support & Network Architecture.</h1>
+                    <p>
+                        Bridging the gap between complex system administration and seamless user experience. 
+                        Currently leading technical support operations and shaping infrastructure solutions[cite: 10, 15].
                     </p>
                     <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                         <button class="btn btn-primary" onclick="document.getElementById('experience').scrollIntoView({ behavior: 'smooth' })">
-                            View Experience
+                            View Work History
                         </button>
-                        <button class="btn" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
-                            Get in Touch
+                        <button class="btn" onclick="window.open('Short, Ethan - Resume.pdf', '_blank')">
+                            View Resume
                         </button>
                     </div>
                 </div>
             </section>
 
-            <!-- Experience Section -->
             <section id="experience" class="experience">
-                <h2>Experience</h2>
+                <h2>Professional Experience</h2>
                 <div class="card-grid">
                     <div class="card">
-                        <h3>Endpoint Support Lead Tech</h3>
-                        <p style="color: #00ffff; margin-bottom: 10px;">Current Role</p>
-                        <p>Lead technicians are the most exceptional student workers who show leadership qualities, are self-motivated, and know many different advanced systems.
-                            They have well-developed troubleshooting and customer-service skill sets, and will also be involved in training, evaluations and level-assignments of the other technicians. </p>
-                    </div>
-                    <div class="card">
-                        <h3>Networking & Data Specialistr</h3>
-                        <p style="color: #00ffff; margin-bottom: 10px;">Previous Role</p>
-                        <p>Managed Windows and Linux environments, implemented security policies, and optimized network infrastructure for enterprise deployments.</p>
-                    </div>
-                    <div class="card">
-                        <h3>IT Support Specialist</h3>
-                        <p style="color: #00ffff; margin-bottom: 10px;">Earlier Role</p>
-                        <p>Provided technical support to end-users, troubleshot hardware/software issues, and maintained IT documentation and best practices.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Projects Section -->
-            <section id="projects" class="projects">
-                <h2>Featured Projects</h2>
-                <div class="card-grid">
-                    <div class="card">
-                        <h4>Infrastructure Migration</h4>
-                        <p style="margin-bottom: 12px;">Led enterprise-wide infrastructure migration to cloud-based solutions</p>
-                        <div style="margin-bottom: 15px;">
-                            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px;">
-                                <span class="tech-tag">Cloud Services</span>
-                                <span class="tech-tag">Azure</span>
-                                <span class="tech-tag">System Admin</span>
-                            </div>
-                            <p style="font-size: 14px; color: #00ffff;">Impact: Reduced infrastructure costs by 35%</p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <h4>Endpoint Management System</h4>
-                        <p style="margin-bottom: 12px;">Designed and implemented centralized endpoint management platform</p>
-                        <div style="margin-bottom: 15px;">
-                            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px;">
-                                <span class="tech-tag">Active Directory</span>
-                                <span class="tech-tag">Group Policy</span>
-                                <span class="tech-tag">MDM</span>
-                            </div>
-                            <p style="font-size: 14px; color: #00ffff;">Impact: 500+ devices under unified management</p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <h4>Support Ticketing System</h4>
-                        <p style="margin-bottom: 12px;">Optimized IT support workflows with advanced ticketing automation</p>
-                        <div style="margin-bottom: 15px;">
-                            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px;">
-                                <span class="tech-tag">Automation</span>
-                                <span class="tech-tag">Process Design</span>
-                                <span class="tech-tag">Documentation</span>
-                            </div>
-                            <p style="font-size: 14px; color: #00ffff;">Impact: 45% improvement in resolution time</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- About Section -->
-            <section id="about" class="about">
-                <h2>About Me</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                    <div>
-                        <h3 style="margin-bottom: 15px;">Professional Summary</h3>
-                        <p style="margin-bottom: 15px;">
-                            Experienced IT professional with a proven track record of leading technical teams and implementing 
-                            large-scale infrastructure solutions. Passionate about solving complex technical challenges and 
-                            driving organizational efficiency through innovative endpoint management strategies.
-                        </p>
+                        <span class="status-flag">Current Role</span>
+                        <h3>Endpoint Support Team Lead</h3>
+                        <p class="job-title">Illinois State University | January 2024 - Present</p>
                         <p>
-                            Dedicated to continuous learning and staying current with emerging technologies in the enterprise IT space.
+                            Orchestrating daily ticket operations and VIP support. Directly mentoring a team of technicians, 
+                            managing evaluations, and overseeing knowledge base accuracy[cite: 10, 14, 15, 16].
                         </p>
                     </div>
-                    <div>
-                        <h3 style="margin-bottom: 15px;">Core Competencies</h3>
-                        <ul style="list-style-type: none; padding: 0;">
-                            <li style="margin-bottom: 8px; color: #a0a8ff;">• Technical Team Leadership</li>
-                            <li style="margin-bottom: 8px; color: #a0a8ff;">• Enterprise Endpoint Management</li>
-                            <li style="margin-bottom: 8px; color: #a0a8ff;">• Infrastructure Architecture</li>
-                            <li style="margin-bottom: 8px; color: #a0a8ff;">• Systems Administration</li>
-                            <li style="margin-bottom: 8px; color: #a0a8ff;">• Strategic Planning</li>
-                            <li style="margin-bottom: 8px; color: #a0a8ff;">• Cross-functional Collaboration</li>
-                        </ul>
+
+                    <div class="card">
+                        <span class="status-flag">Previous Role</span>
+                        <h3>Network & Telecommunication Technician</h3>
+                        <p class="job-title">Womack Technologies | November 2024 - August 2025</p>
+                        <p>
+                            Executed end-to-end network deployments. Integrated Windows Server environments, 
+                            configured firewalls (LAN/WAN), and managed Active Directory/Exchange Online[cite: 20, 21, 25, 26, 27].
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <span class="status-flag">Previous Role</span>
+                        <h3>Camp Commissioner</h3>
+                        <p class="job-title">Abraham Linclon Council; Boy Scouts of America | Summer 2025</p>
+                        <p>
+                            National Camp School Program Director Certified. Directed logistical operations for camp facilities. Managed volunteer staff, 
+                            oversaw safety evaluations, and coordinated communications across multiple units[cite: 18, 19, 23].
+                        </p>
                     </div>
                 </div>
             </section>
 
-            <!-- Contact Section -->
-            <section id="contact" class="contact">
-                <h2>Get In Touch</h2>
+            <section id="projects" class="projects">
+                <h2>Technical Projects</h2>
+                <div class="card-grid">
+                    
+                    <div class="card">
+                        <h4>NACURH Annual Conference Technology Co-Chair</h4>
+                        <p class="job-title">Scale: 950+ Attendees | Impact: Operational Efficiency</p>
+                        <p style="margin-bottom: 10px;">Led technology operations and AV coordination for a major national conference[cite: 31, 32].</p>
+                        
+                        <details>
+                            <summary>View Technical Specifications</summary>
+                            <div class="expanded-content">
+                                <ul>
+                                    <li><strong>Infrastructure:</strong> Partnered with university IT for secure Logon IDs and classroom support[cite: 32].</li>
+                                    <li><strong>Digital Assets:</strong> Built and maintained the conference website and attendee resource portal[cite: 32].</li>
+                                    <li><strong>Coordination:</strong> Managed cross-functional teams to ensure seamless Mass Gathering events[cite: 33].</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="card">
+                        <h4>Live Streaming Infrastructure</h4>
+                        <p class="job-title">Budget: $11,500 | Role: Project Lead</p>
+                        <p style="margin-bottom: 10px;">Designed and implemented a permanent broadcasting system for community services[cite: 46, 55].</p>
+                        
+                        <details>
+                            <summary>View Implementation Details</summary>
+                            <div class="expanded-content">
+                                <ul>
+                                    <li><strong>Design:</strong> Created network architecture for low-latency high-definition streaming.</li>
+                                    <li><strong>Fundraising:</strong> Presented project proposals to stakeholders to secure $11.5k in funding[cite: 46, 55].</li>
+                                    <li><strong>Training:</strong> Developed documentation and trained volunteers on system operation[cite: 111].</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="card">
+                        <h4>Story Byte Startup</h4>
+                        <p class="job-title">Context: Sangamon CEO Program</p>
+                        <p style="margin-bottom: 10px;">Founded an interactive education startup focused on collaborative writing tools[cite: 42, 96].</p>
+                        
+                        <details>
+                            <summary>View Business Logic</summary>
+                            <div class="expanded-content">
+                                <ul>
+                                    <li><strong>Recognition:</strong> Finalist in "CEO vs. Sharks" Business Startup Competition[cite: 41, 95].</li>
+                                    <li><strong>Product:</strong> Designed app concepts to assist teachers with writing and reading collaboration[cite: 97, 98].</li>
+                                    <li><strong>Skillset:</strong> Market analysis, pitch deck creation, and public speaking[cite: 39, 40].</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="awards" class="projects">
+                <h2>Honors & Awards</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>Eagle Scout</h4>
+                        <p class="job-title">Boy Scouts of America | April 2023</p>
+                        <p>Highest achievement or rank attainable in the Scouts BSA program[cite: 48, 54, 113, 114].</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>Vigil Honor</h4>
+                        <p class="job-title">Order of the Arrow | October 2023</p>
+                        <p>High mark of distinction and recognition reserved for those with exceptional service[cite: 56, 117, 120].</p>
+                    </div>
+
+                    <div class="card">
+                        <h4>Founders Award</h4>
+                        <p class="job-title">Order of the Arrow | January 2022</p>
+                        <p>Recognizes Arrowmen who have given outstanding service to their lodge[cite: 56, 116, 119].</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="about">
+                <h2>Technical Competencies</h2>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
                     <div>
-                        <h3 style="margin-bottom: 20px;">Contact Information</h3>
+                        <h3 style="margin-bottom: 15px;">Systems & Networking</h3>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <span class="tech-tag">Windows Server</span>
+                            <span class="tech-tag">Active Directory</span>
+                            <span class="tech-tag">Exchange Online</span>
+                            <span class="tech-tag">Ubiquiti Unifi</span>
+                            <span class="tech-tag">VoIP / SIP</span>
+                            <span class="tech-tag">Firewall Config</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 15px;">Software & Tools</h3>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <span class="tech-tag">Microsoft 365</span>
+                            <span class="tech-tag">Cherwell ITSM</span>
+                            <span class="tech-tag">Adobe Creative Cloud</span>
+                            <span class="tech-tag">WordPress</span>
+                            <span class="tech-tag">Google Analytics</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="contact">
+                <h2>Initiate Contact</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                    <div>
+                        <h3 style="margin-bottom: 20px;">Direct Communication</h3>
                         <div style="margin-bottom: 20px;">
-                            <p style="color: #00ffff; margin-bottom: 5px;">Email:</p>
-                            <a href="mailto:your.email@example.com" style="color: #a0a8ff; text-decoration: none;">
-                                your.email@example.com
+                            <p class="job-title">Email Frequency</p>
+                            <a href="mailto:ethan@emshort.net" style="color: var(--text-main); text-decoration: none; font-size: 18px;">
+                                ethan@emshort.net
                             </a>
                         </div>
                         <div style="margin-bottom: 20px;">
-                            <p style="color: #00ffff; margin-bottom: 5px;">LinkedIn:</p>
-                            <a href="https://linkedin.com/in/ethan-m-short" target="_blank" rel="noopener noreferrer" style="color: #a0a8ff; text-decoration: none;">
+                            <p class="job-title">Network Profile</p>
+                            <a href="https://linkedin.com/in/ethan-m-short" target="_blank" style="color: var(--text-main); text-decoration: none;">
                                 linkedin.com/in/ethan-m-short
                             </a>
                         </div>
-                        <div>
-                            <p style="color: #00ffff; margin-bottom: 5px;">Response Time:</p>
-                            <p style="color: #a0a8ff;">Usually within 24 hours</p>
-                        </div>
                     </div>
-                    <!---
-                    <form style="display: flex; flex-direction: column; gap: 15px;">
-                        <div>
-                            <label for="name" style="display: block; margin-bottom: 5px; color: #a0a8ff;">Name</label>
-                            <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; background: #1a1f3a; border: 1px solid #003366; color: #e0e6ff; border-radius: 5px;">
-                        </div>
-                        <div>
-                            <label for="email" style="display: block; margin-bottom: 5px; color: #a0a8ff;">Email</label>
-                            <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; background: #1a1f3a; border: 1px solid #003366; color: #e0e6ff; border-radius: 5px;">
-                        </div>
-                        <div>
-                            <label for="message" style="display: block; margin-bottom: 5px; color: #a0a8ff;">Message</label>
-                            <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 10px; background: #1a1f3a; border: 1px solid #003366; color: #e0e6ff; border-radius: 5px; font-family: inherit;"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    --></form>
+
+                    <div>
+                        <h3 style="margin-bottom: 20px;">Mailing Address</h3>
+                        <p>
+                            Ethan M. Short<br>
+                            1234 Main Street<br>
+                            Springfield, IL 62701<br>
+                            United States
+                        </p>
                 </div>
             </section>
         </main>
