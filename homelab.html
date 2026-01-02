@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/assets/es_ favicon.png">
-    <title>Ethan Short - Home Lab Operations</title>
+    <title>Ethan Short - Home Lab</title>
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -14,18 +14,17 @@
                 <div class="profile-card">
                     <div class="profile-info">
                         <h1>Ethan Short</h1>
-                        <p class="profile-title">Lab Administrator</p>
-                        <p class="orgnization-title">Internal Operations</p>
-                        <p class="status">System Status: Nominal</p>
+                        <p class="profile-title">Home Lab & Projects</p>
                     </div>
                 </div>
 
                 <nav class="nav-links">
                     <a href="index.html">← Return to Main</a>
-                    <a href="#overview">Lab Overview</a>
-                    <a href="#hardware">Hardware Stack</a>
-                    <a href="#services">Hosted Services</a>
-                    <a href="#topology">Network Topology</a>
+                    <details class="nav-group" open>
+                        <summary>Projects</summary>
+                        <a href="index.html#projects" class="nav-child">Technical Projects</a>
+                        <a href="#overview" class="nav-child active">Home Lab</a>
+                    </details>
                 </nav>
 
                 <div class="social-links">
@@ -38,47 +37,56 @@
        <main class="main-content">
             <section id="overview" class="hero">
                 <div>
-                    <p class="hero-eyebrow">infrastructure // testing // deployment</p>
-                    <h1>Home Lab Environment</h1>
+                    <p class="hero-eyebrow">SANDBOX // SELF-HOSTED</p>
+                    <h1>The Home Lab</h1>
                     <p>
-                    A dedicated sandbox for enterprise simulation, network security testing, and self-hosted services. 
-                    This environment mirrors production standards to facilitate hands-on learning with Windows Server, 
-                    Hyper-V virtualization, and network segmentation.
+                        This is my personal playground for testing enterprise tech and hosting services for my home. 
+                        It’s a hybrid setup that lets me simulate a corporate Windows environment while running fun, 
+                        modern apps in Docker.
+                    </p>
+                    <p style="margin-top: 15px;">
+                        The core runs on <strong>Unraid</strong> for flexible storage and containers (like <strong>Plex</strong> 
+                        and <strong>HomeAssistant</strong>), while a separate <strong>Windows Server</strong> environment handles 
+                        Active Directory and DNS. The entire network is secured and segmented using <strong>Ubiquiti UniFi</strong> gear.
                     </p>
                 </div>
             </section>
 
             <section id="hardware" class="experience">
-                <h2>Hardware Inventory</h2>
+                <h2>The Stack</h2>
                 <div class="card-grid">
+                    
                     <div class="card">
-                        <span class="status-flag">Hypervisor Node 01</span>
-                        <h3>Primary Compute Host</h3>
-                        <p class="job-title">Dell PowerEdge / Custom Build</p>
+                        <span class="status-flag">The Brains</span>
+                        <h3>Compute & Storage</h3>
+                        <p class="job-title">Unraid & Windows Server</p>
                         <p style="margin-bottom: 10px;">
-                            Host machine running Windows Server 2022 Hyper-V Core. Handles primary domain controllers and application servers.
+                            My primary server runs Unraid to handle NAS duties and Docker containers. 
+                            I also run Hyper-V instances for Windows Server 2022 to practice AD administration.
                         </p>
                         <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
-                            <span class="tech-tag">64GB DDR4</span>
-                            <span class="tech-tag">Xeon E5</span>
-                            <span class="tech-tag">RAID 10 Storage</span>
+                            <span class="tech-tag">Unraid OS</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Windows Server 2022</span>
+                            <span class="tech-tag">Hyper-V</span>
                         </div>
                     </div>
 
                     <div class="card">
-                        <span class="status-flag">Network Core</span>
-                        <h3>Ubiquiti Unifi Stack</h3>
-                        <p class="job-title">Routing & Switching</p>
+                        <span class="status-flag">The Plumbing</span>
+                        <h3>Network Infrastructure</h3>
+                        <p class="job-title">Ubiquiti UniFi</p>
                         <p style="margin-bottom: 10px;">
-                            Managed SDN environment with VLANS for IoT, Guest, and Lab traffic isolation.
+                            A complete UniFi stack (UDM-Pro) managing multiple VLANs. This keeps my trusted lab devices 
+                            separate from the IoT chaos.
                         </p>
                         <details>
-                            <summary>View Network Specs</summary>
+                            <summary>View Network Details</summary>
                             <div class="expanded-content">
                                 <ul>
-                                    <li><strong>Gateway:</strong> Unifi Dream Machine Pro (UDM-Pro)</li>
-                                    <li><strong>Switching:</strong> USW-24-PoE for APs and Cameras</li>
-                                    <li><strong>Security:</strong> IDS/IPS Enabled, Geo-IP Filtering active</li>
+                                    <li><strong>Gateway:</strong> UniFi Dream Machine Pro</li>
+                                    <li><strong>Switching:</strong> PoE for Cameras and APs</li>
+                                    <li><strong>Segmentation:</strong> IoT, Guest, and Trusted LANs</li>
                                 </ul>
                             </div>
                         </details>
@@ -87,70 +95,42 @@
             </section>
 
             <section id="services" class="projects">
-                <h2>Hosted Services & Implementations</h2>
+                <h2>Services & Automation</h2>
                 <div class="card-grid">
                     
                     <div class="card">
-                        <h4>Identity Management</h4>
-                        <p class="job-title">Active Directory Domain Services</p>
+                        <h4>Home Automation</h4>
+                        <p class="job-title">HomeAssistant + Raspberry Pi</p>
                         <p>
-                            Full forest implementation simulating a small enterprise environment. Includes DNS, DHCP, and Certificate Authority services.
-                        </p>
-                        <div style="margin-top: 15px;">
-                             <span class="tech-tag">GPO Management</span>
-                             <span class="tech-tag">User Accounts</span>
-                             <span class="tech-tag">LDAP Integration</span>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <h4>Endpoint Management</h4>
-                        <p class="job-title">Microsoft SCCM / MECM</p>
-                        <p>
-                            Lab instance for testing OSD (Operating System Deployment) task sequences and application packaging before production rollout.
+                            Running on a dedicated Pi, HomeAssistant ties all my smart devices together with 
+                            local-first logic, avoiding cloud dependency where possible.
                         </p>
                     </div>
 
                     <div class="card">
-                        <h4>Media & Storage</h4>
-                        <p class="job-title">NAS & Streaming</p>
+                        <h4>Media Streaming</h4>
+                        <p class="job-title">Plex Media Server</p>
                         <p>
-                            Centralized SMB shares for backups and media streaming via Plex. Automated backups via Veeam Community Edition.
+                            Hardware-accelerated transcoding for streaming movies and music to any device in the house. 
+                            Backed by the Unraid storage array.
                         </p>
                     </div>
 
-                </div>
-            </section>
-
-            <section id="topology" class="about">
-                <h2>Network Configuration</h2>
-                <div class="card">
-                    <h3>VLAN Segmentation</h3>
-                    <p style="margin-bottom: 20px;">Current logic for network traffic separation to ensure security and reduce broadcast noise.</p>
-                    
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-                        <div>
-                            <span class="status-flag">VLAN 10</span>
-                            <p class="job-title">Management</p>
-                            <p style="font-size: 14px;">Network gear and hypervisor interfaces.</p>
-                        </div>
-                        <div>
-                            <span class="status-flag">VLAN 20</span>
-                            <p class="job-title">Trusted Lab</p>
-                            <p style="font-size: 14px;">Domain joined workstations and servers.</p>
-                        </div>
-                        <div>
-                            <span class="status-flag">VLAN 99</span>
-                            <p class="job-title">IoT / Untrusted</p>
-                            <p style="font-size: 14px;">Smart devices and guest wifi.</p>
-                        </div>
+                    <div class="card">
+                        <h4>Identity & Security</h4>
+                        <p class="job-title">Active Directory</p>
+                        <p>
+                            I maintain a domain environment to stay sharp on Group Policy (GPO), DNS, and 
+                            user management practices used in my professional work.
+                        </p>
                     </div>
+
                 </div>
             </section>
 
             <section class="contact" style="margin-top: 50px;">
-                <p class="job-title">Documentation</p>
-                <p>Config files and diagrams available upon request via GitHub.</p>
+                <p class="job-title">More Info</p>
+                <p>Always happy to chat about specs or configs—hit me up on LinkedIn if you want to know more.</p>
             </section>
         </main>
     </div>
