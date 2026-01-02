@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/assets/es_ favicon.png">
+    <title>Ethan Short - Home Lab Operations</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <div class="profile-card">
+                    <div class="profile-info">
+                        <h1>Ethan Short</h1>
+                        <p class="profile-title">Lab Administrator</p>
+                        <p class="orgnization-title">Internal Operations</p>
+                        <p class="status">System Status: Nominal</p>
+                    </div>
+                </div>
+
+                <nav class="nav-links">
+                    <a href="index.html">← Return to Main</a>
+                    <a href="#overview">Lab Overview</a>
+                    <a href="#hardware">Hardware Stack</a>
+                    <a href="#services">Hosted Services</a>
+                    <a href="#topology">Network Topology</a>
+                </nav>
+
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/ethan-m-short" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/EthanMShort" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </aside>
+
+       <main class="main-content">
+            <section id="overview" class="hero">
+                <div>
+                    <p class="hero-eyebrow">infrastructure // testing // deployment</p>
+                    <h1>Home Lab Environment</h1>
+                    <p>
+                    A dedicated sandbox for enterprise simulation, network security testing, and self-hosted services. 
+                    This environment mirrors production standards to facilitate hands-on learning with Windows Server, 
+                    Hyper-V virtualization, and network segmentation.
+                    </p>
+                </div>
+            </section>
+
+            <section id="hardware" class="experience">
+                <h2>Hardware Inventory</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <span class="status-flag">Hypervisor Node 01</span>
+                        <h3>Primary Compute Host</h3>
+                        <p class="job-title">Dell PowerEdge / Custom Build</p>
+                        <p style="margin-bottom: 10px;">
+                            Host machine running Windows Server 2022 Hyper-V Core. Handles primary domain controllers and application servers.
+                        </p>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
+                            <span class="tech-tag">64GB DDR4</span>
+                            <span class="tech-tag">Xeon E5</span>
+                            <span class="tech-tag">RAID 10 Storage</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <span class="status-flag">Network Core</span>
+                        <h3>Ubiquiti Unifi Stack</h3>
+                        <p class="job-title">Routing & Switching</p>
+                        <p style="margin-bottom: 10px;">
+                            Managed SDN environment with VLANS for IoT, Guest, and Lab traffic isolation.
+                        </p>
+                        <details>
+                            <summary>View Network Specs</summary>
+                            <div class="expanded-content">
+                                <ul>
+                                    <li><strong>Gateway:</strong> Unifi Dream Machine Pro (UDM-Pro)</li>
+                                    <li><strong>Switching:</strong> USW-24-PoE for APs and Cameras</li>
+                                    <li><strong>Security:</strong> IDS/IPS Enabled, Geo-IP Filtering active</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services" class="projects">
+                <h2>Hosted Services & Implementations</h2>
+                <div class="card-grid">
+                    
+                    <div class="card">
+                        <h4>Identity Management</h4>
+                        <p class="job-title">Active Directory Domain Services</p>
+                        <p>
+                            Full forest implementation simulating a small enterprise environment. Includes DNS, DHCP, and Certificate Authority services.
+                        </p>
+                        <div style="margin-top: 15px;">
+                             <span class="tech-tag">GPO Management</span>
+                             <span class="tech-tag">User Accounts</span>
+                             <span class="tech-tag">LDAP Integration</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h4>Endpoint Management</h4>
+                        <p class="job-title">Microsoft SCCM / MECM</p>
+                        <p>
+                            Lab instance for testing OSD (Operating System Deployment) task sequences and application packaging before production rollout.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h4>Media & Storage</h4>
+                        <p class="job-title">NAS & Streaming</p>
+                        <p>
+                            Centralized SMB shares for backups and media streaming via Plex. Automated backups via Veeam Community Edition.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="topology" class="about">
+                <h2>Network Configuration</h2>
+                <div class="card">
+                    <h3>VLAN Segmentation</h3>
+                    <p style="margin-bottom: 20px;">Current logic for network traffic separation to ensure security and reduce broadcast noise.</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                        <div>
+                            <span class="status-flag">VLAN 10</span>
+                            <p class="job-title">Management</p>
+                            <p style="font-size: 14px;">Network gear and hypervisor interfaces.</p>
+                        </div>
+                        <div>
+                            <span class="status-flag">VLAN 20</span>
+                            <p class="job-title">Trusted Lab</p>
+                            <p style="font-size: 14px;">Domain joined workstations and servers.</p>
+                        </div>
+                        <div>
+                            <span class="status-flag">VLAN 99</span>
+                            <p class="job-title">IoT / Untrusted</p>
+                            <p style="font-size: 14px;">Smart devices and guest wifi.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact" style="margin-top: 50px;">
+                <p class="job-title">Documentation</p>
+                <p>Config files and diagrams available upon request via GitHub.</p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
