@@ -57,36 +57,37 @@
                 <div class="card-grid">
                     
                     <div class="card">
-                        <span class="status-flag">The Brains</span>
+                        <span class="status-flag">NAS01</span>
                         <h3>Compute & Storage</h3>
-                        <p class="job-title">Unraid & Windows Server</p>
+                        <p class="job-title">Unraid OS | Lenovo ThinkStation P520 | 5TB HDD (RAID1)</p>
                         <p style="margin-bottom: 10px;">
                             My primary server runs Unraid to handle NAS duties and Docker containers. 
-                            I also run Hyper-V instances for Windows Server 2022 to practice AD administration.
+                            I also plan to run Hyper-V instances for Windows Server 2022 to practice AD administration.
                         </p>
                         <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
                             <span class="tech-tag">Unraid OS</span>
                             <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Windows Server 2022</span>
+                            <span class="tech-tag">Windows Server</span>
                             <span class="tech-tag">Hyper-V</span>
                         </div>
                     </div>
 
                     <div class="card">
-                        <span class="status-flag">The Plumbing</span>
+                        <span class="status-flag">GATEWAY01</span>
                         <h3>Network Infrastructure</h3>
                         <p class="job-title">Ubiquiti UniFi</p>
                         <p style="margin-bottom: 10px;">
-                            A complete UniFi stack (UDM-Pro) managing multiple VLANs. This keeps my trusted lab devices 
+                            A modest UniFi stack (UCG Max) managing multiple VLANs. This keeps my trusted lab devices 
                             separate from the IoT chaos.
                         </p>
                         <details>
                             <summary>View Network Details</summary>
                             <div class="expanded-content">
                                 <ul>
-                                    <li><strong>Gateway:</strong> UniFi Dream Machine Pro</li>
-                                    <li><strong>Switching:</strong> PoE for Cameras and APs</li>
-                                    <li><strong>Segmentation:</strong> IoT, Guest, and Trusted LANs</li>
+                                    <li><strong>Gateway:</strong> UniFi Cloud Gateway Max</li>
+                                    <li><strong>Switching:</strong> Using the 2.5 GbE RJ45 LAN Ports on the UCG Max for now</li>
+                                    <li><strong>Wireless:</strong> Unifi U7 Pro for 2.4 GHz, 5 GHz, and 6 GHz connectivity</li>
+                                    <li><strong>Segmentation:</strong> Main (Standard Network), HomeLab (Sepreate NAS01, HomeAssistant, and other appliances), Guest, IoT Network (For Smart Plugs and Lights), Isolated (For dockers that I only want to have acces to external internet, nothing internal)</li>
                                 </ul>
                             </div>
                         </details>
@@ -99,12 +100,22 @@
                 <div class="card-grid">
                     
                     <div class="card">
-                        <h4>Home Automation</h4>
-                        <p class="job-title">HomeAssistant + Raspberry Pi</p>
+                        <span class="status-flag">ESHOME</span>
+                        <h3>Home Automation</h3>
+                        <p class="job-title">Home Assistant + Raspberry Pi</p>
                         <p>
                             Running on a dedicated Pi, HomeAssistant ties all my smart devices together with 
                             local-first logic, avoiding cloud dependency where possible.
                         </p>
+                        <details>
+                            <summary>View Home Assistant Details</summary>
+                            <div class="expanded-content">
+                                <ul>
+                                    <li><strong>Devices:</strong> Govee Lights, TP-Link Smart Plugs, Zigbee Tempature/Humidity Sensors</li>
+                                    <li><strong>Hardware:</strong> Raspberry Pi 4, Snoff Zigbee USB Stick</li>
+                                </ul>
+                            </div>
+                        </details>
                     </div>
 
                     <div class="card">
@@ -116,22 +127,44 @@
                         </p>
                     </div>
 
+
+                </div>
+
+            </section>
+
+                        <section id="integrations" class="projects">
+                <h2>Interfaces & Integrations</h2>
+                <div class="card-grid">
+                    
                     <div class="card">
-                        <h4>Identity & Security</h4>
-                        <p class="job-title">Active Directory</p>
+                        <span class="status-flag">INKDISP01</span>
+                        <h3>E-Ink Display</h3>
+                        <p class="job-title">GitHub + Cloudflare</p>
                         <p>
-                            I maintain a domain environment to stay sharp on Group Policy (GPO), DNS, and 
-                            user management practices used in my professional work.
+                           A Python-based dashboard for the Raspberry Pi Zero 2 W that transforms a Pimoroni Inky pHAT into an interactive information hub.
+                           Controlled via a local Flask web interface, it delivers real-time system analytics, local weather forecasts, and live Last.fm music tracking to an e-Ink display.
+                        </p>
+                        <div style="margin-top: 15px;">
+                            <a href="https://github.com/EthanMShort/inky-dashboard" target="_blank" class="btn" style="margin-left: 0; width: 100%; text-align: center;">
+                            View the GitHub Repo
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <span class="status-flag">WEB</span>
+                        <h4>Website - emshort.net</h4>
+                        <p class="job-title">Cloudflare + GitHub</p>
+                        <p>
+                            Using GitHub and Cloudflare Workers to host the website you are looking at!
                         </p>
                     </div>
+
 
                 </div>
             </section>
 
-            <section class="contact" style="margin-top: 50px;">
-                <p class="job-title">More Info</p>
-                <p>Always happy to chat about specs or configs—hit me up on LinkedIn if you want to know more.</p>
-            </section>
+
         </main>
     </div>
 </body>
