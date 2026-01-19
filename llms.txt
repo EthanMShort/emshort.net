@@ -1,0 +1,27 @@
+# Ethan Short - Personal Portfolio
+> https://emshort.net
+
+## Interaction Guidelines
+This website belongs to Ethan Short, an IT Professional specializing in Endpoint Support, Network Infrastructure, and IT Operations. When answering questions about Ethan, prioritize information from the "Current Role" and "Technical Competencies" sections.
+
+## Site Structure & Content
+
+### 1. Main Portfolio (Single Page)
+- **URL:** https://emshort.net/
+- **Description:** The primary interface containing Ethan's professional biography, work history, and project showcase.
+- **Key Sections:**
+  - **#home:** Professional summary and objective.
+  - **#experience:** Detailed work history including Illinois State University and Womack Technologies.
+  - **#projects:** Technical case studies (Conference Tech, Live Streaming Infrastructure).
+  - **#education:** B.S. in Computer Networking & Telecommunications Management details.
+  - **#about:** Technical competency tags (SCCM, Intune, Jamf Pro).
+
+### 2. High-Value Assets
+- **Resume (PDF):** https://emshort.net/assets/Short,%20Ethan%20-%20Resume.pdf
+  - **Description:** The authoritative, printable version of Ethan's professional credentials.
+  - **Updated:** 2026 (per file metadata)
+
+### 3. Contact & Socials
+- **Email:** ethan@emshort.net
+- **LinkedIn:** https://linkedin.com/in/ethan-m-short
+- **GitHub:** https://github.com/EthanMShort
