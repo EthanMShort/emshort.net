@@ -5,7 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/es_ favicon.png">
     <title>Ethan Short - Technical Portfolio</title>
+    
+    <link rel="stylesheet" href="https://dark-base-d4a8-nlweb.ethan-38f.workers.dev/nlweb-dropdown-chat.css">
+    <link rel="stylesheet" href="https://dark-base-d4a8-nlweb.ethan-38f.workers.dev/common-chat-styles.css">
+
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* 1. Container Configuration */
+        #docs-search-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            font-family: 'Roboto', 'Courier New', monospace !important;
+            
+            /* KEY FIX: This creates the "Chat Bot" feel.
+               It stacks the input at the bottom and forces results to flow UP. */
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: flex-end; /* Aligns content to the right */
+            gap: 10px; /* Space between input and results */
+        }
+
+        /* 2. Input Field Styling (The "Console Line") */
+        #docs-search-container input {
+            border-radius: 2px !important;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.2) !important;
+            border: 2px solid var(--color-corporate-blue, #1c58a7) !important;
+            background-color: #fff !important;
+            color: #1c58a7 !important;
+            font-family: inherit !important;
+            width: 300px !important;
+            max-width: 80vw; /* Responsive fix for mobile */
+            transition: all 0.2s ease;
+        }
+
+        /* Responsive Interaction */
+        #docs-search-container input:focus {
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.2) !important;
+            transform: translate(2px, 2px); /* Tactile "push" effect */
+        }
+
+        /* 3. Results/Dropdown Styling (The "Output Log") */
+        /* We target generic divs inside the container that aren't the input */
+        #docs-search-container > div:not(input) {
+            position: relative !important; /* Stop it from flying off-screen */
+            top: auto !important;
+            bottom: 0 !important;
+            margin-bottom: 5px !important;
+            
+            /* Aesthetics */
+            background-color: #fff !important;
+            border: 2px solid var(--color-corporate-blue, #1c58a7) !important;
+            border-radius: 2px !important;
+            box-shadow: -4px 4px 0 rgba(0,0,0,0.1) !important;
+            
+            /* Constrain height so it doesn't cover the whole page */
+            max-height: 60vh !important;
+            overflow-y: auto !important;
+        }
+
+        /* Force colors to match your theme */
+        :root {
+            --nlweb-primary: #1c58a7;
+        }
+    </style>
 </head>
 <body>
     <div class="app">
@@ -52,7 +117,7 @@
             network architecture, and entrepreneurial leadership. From founding startups to managing 
             campus-wide endpoint operations, I am dedicated to building resilient systems and 
             mentoring high-performance teams to solve complex challenges.
-            </p>
+            </p>  
             <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                 <button class="btn btn-primary" onclick="document.getElementById('experience').scrollIntoView({ behavior: 'smooth' })">
                     View Work History
@@ -329,5 +394,17 @@
             </section>
         </main>
     </div>
+
+    <div id="docs-search-container"></div>
+    <script type="module">
+       import { NLWebDropdownChat } from 'https://dark-base-d4a8-nlweb.ethan-38f.workers.dev/nlweb-dropdown-chat.js';
+
+       const chat = new NLWebDropdownChat({
+         containerId: 'docs-search-container',
+         site: 'https://dark-base-d4a8-nlweb.ethan-38f.workers.dev',
+         placeholder: 'QUERY ARCHIVE...', 
+         endpoint: 'https://dark-base-d4a8-nlweb.ethan-38f.workers.dev'
+       });
+    </script>
 </body>
 </html>
