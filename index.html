@@ -1,410 +1,424 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="assets/es_ favicon.png">
-    <title>Ethan Short - Technical Portfolio</title>
-    
-    <link rel="stylesheet" href="https://dark-base-d4a8-nlweb.ethan-38f.workers.dev/nlweb-dropdown-chat.css">
-    <link rel="stylesheet" href="https://dark-base-d4a8-nlweb.ethan-38f.workers.dev/common-chat-styles.css">
-
-    <link rel="stylesheet" href="styles.css">
-
-    <style>
-        /* 1. Container Configuration */
-        #docs-search-container {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 9999;
-            font-family: 'Roboto', 'Courier New', monospace !important;
-            
-            /* KEY FIX: This creates the "Chat Bot" feel.
-               It stacks the input at the bottom and forces results to flow UP. */
-            display: flex;
-            flex-direction: column-reverse;
-            align-items: flex-end; /* Aligns content to the right */
-            gap: 10px; /* Space between input and results */
-        }
-
-        /* 2. Input Field Styling (The "Console Line") */
-        #docs-search-container input {
-            border-radius: 2px !important;
-            box-shadow: 4px 4px 0 rgba(0,0,0,0.2) !important;
-            border: 2px solid var(--color-corporate-blue, #1c58a7) !important;
-            background-color: #fff !important;
-            color: #1c58a7 !important;
-            font-family: inherit !important;
-            width: 300px !important;
-            max-width: 80vw; /* Responsive fix for mobile */
-            transition: all 0.2s ease;
-        }
-
-        /* Responsive Interaction */
-        #docs-search-container input:focus {
-            box-shadow: 2px 2px 0 rgba(0,0,0,0.2) !important;
-            transform: translate(2px, 2px); /* Tactile "push" effect */
-        }
-
-        /* 3. Results/Dropdown Styling (The "Output Log") */
-        /* We target generic divs inside the container that aren't the input */
-        #docs-search-container > div:not(input) {
-            position: relative !important; /* Stop it from flying off-screen */
-            top: auto !important;
-            bottom: 0 !important;
-            margin-bottom: 5px !important;
-            
-            /* Aesthetics */
-            background-color: #fff !important;
-            border: 2px solid var(--color-corporate-blue, #1c58a7) !important;
-            border-radius: 2px !important;
-            box-shadow: -4px 4px 0 rgba(0,0,0,0.1) !important;
-            
-            /* Constrain height so it doesn't cover the whole page */
-            max-height: 60vh !important;
-            overflow-y: auto !important;
-        }
-
-        /* Force colors to match your theme */
-        :root {
-            --nlweb-primary: #1c58a7;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="assets/es_ favicon.png" />
+  <title>Ethan Short — Technical Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="app">
-        <aside class="sidebar">
-            <div class="sidebar-content">
-                <div class="profile-card">
-                    <div class="profile-info">
-                        <h1>Ethan Short</h1>
-                        <p class="profile-title">Computer Networking & Telecommunication Management</p>
-                        <p class="orgnization-title">Illinois State University - May 2027</p>
-                        <p class="status">Available for Opportunities</p>
-                    </div>
-                </div>
 
-                <nav class="nav-links">
-                    <a href="#home">Home</a>
-                    <a href="#experience">Experience</a>
-                    <details class="nav-group">
-                    <summary>Projects</summary>
-                    <a href="#projects" class="nav-child">Technical Projects</a>
-                    <a href="homelab.html" class="nav-child">Home Lab</a>
-                    </details>
-                    <a href="#awards">Awards</a>
-                    <a href="#education">Education</a>
-                    <a href="#about">Technical Competencies</a>
-                    <a href="#contact">Contact</a>
-                </nav>
+<!-- ── SIDEBAR ── -->
+<div id="sidebar">
+  <h1>Ethan Short</h1>
+  <p class="subtitle">Computer Networking &amp;<br>Telecommunication Management</p>
+  <p class="school">Illinois State University · May 2027</p>
 
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/ethan-m-short" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/EthanMShort" target="_blank">GitHub</a>
-                    <a href="sitemap.xml" target="_blank">Site Map</a>
-                </div>
-            </div>
-        </aside>
+  <div class="availability">
+    <span class="availability-dot"></span>
+    Available for Opportunities
+  </div>
 
-       <main class="main-content">
-    <section id="home" class="hero">
-        <div>
-            <p class="hero-eyebrow">IT Professional & Team Leader</p>
-            <h1>Driven by Technical Excellence & Strategic Operations.</h1>
-            <p>
-            I am a versatile technology specialist with a background spanning enterprise infrastructure, 
-            network architecture, and entrepreneurial leadership. From founding startups to managing 
-            campus-wide endpoint operations, I am dedicated to building resilient systems and 
-            mentoring high-performance teams to solve complex challenges.
-            </p>  
-            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                <button class="btn btn-primary" onclick="document.getElementById('experience').scrollIntoView({ behavior: 'smooth' })">
-                    View Work History
-                </button>
-                <button class="btn" onclick="document.getElementById('Short, Ethan - Resume.pdf').click()">
-                    View Current Resume
-                </button>
-            </div>
-        </div>
-    </section>
+  <nav>
+    <p class="nav-group-label">Navigation</p>
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#experience">Experience</a></li>
+    </ul>
+    <p class="nav-group-label">Projects</p>
+    <ul>
+      <li><a href="#projects">Technical Projects</a></li>
+      <li><a href="homelab.html">Home Lab</a></li>
+    </ul>
+    <p class="nav-group-label">&nbsp;</p>
+    <ul>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#about">Technical Competencies</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <section id="experience" class="experience">
-        <h2>Professional Experience</h2>
-        <div class="card-grid">
-            <div class="card">
-                <span class="status-flag">Current Role</span>
-                <h3>Endpoint Support - Lead Tech</h3>
-                <p class="job-title">Illinois State University; Office of Technology Solutions | Jan 2024 - Present</p>
-                <p style="margin-bottom: 10px;">
-                    Serve as Level 2/3 escalation point within ServiceNow Yokohama. Mentor a specialized team of 15+ student technicians 
-                    while managing workstation lifecycles across Microsoft SCCM, Intune, and Jamf Pro environments.
-                </p>
-                
-                <details>
-                    <summary>View Technical Responsibilities</summary>
-                    <div class="expanded-content">
-                        <ul>
-                            <li><strong>Deployment:</strong> Package enterprise applications with custom detection logic. Maintain application, driver, and security health for 2,000+ direct endpoints.</li>
-                            <li><strong>Windows Infrastructure:</strong> Create and link Group Policy Objects (GPOs), administer AD groups/OUs, and manage Print Server 2022 queues.</li>
-                            <li><strong>Identity Ops:</strong> Execute sensitive data approvals, VIP entitlements, and onboarding/offboarding workflows.</li>
-                            <li><strong>Cross-Platform:</strong> Troubleshoot Intune/Jamf managed macOS fleets and Android devices. Support Cisco IP Communicator and VPN connectivity.</li>
-                            <li><strong>Documentation:</strong> Author and maintain internal Atlassian Confluence knowledge base articles.</li>
-                        </ul>
-                    </div>
-                </details>
-            </div>
+  <div class="sidebar-footer">
+    <a href="https://linkedin.com/in/ethan-m-short" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://github.com/EthanMShort" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      GitHub
+    </a>
+    <a href="assets/Short_Ethan-Resume.pdf" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+      Resume PDF
+    </a>
+    <a href="sitemap.xml" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      Site Map
+    </a>
+  </div>
+</div>
 
-            <div class="card">
-                <span class="status-flag">Previous Role</span>
-                <h3>Network & Telecommunication Technician</h3>
-                <p class="job-title">Womack Technologies | Nov 2024 - July 2025</p>
-                <p>
-                    Executed end-to-end network deployments. Integrated Windows Server environments, 
-                    configured firewalls (LAN/WAN), and managed Active Directory/Exchange Online.
-                </p>
-            </div>
+<!-- ── MAIN (offset by sidebar) ── -->
+<div id="wrapper">
 
-            <div class="card">
-                <span class="status-flag">Leadership</span>
-                <h3>Program Director & Camp Commissioner</h3>
-                <p class="job-title">Boy Scouts of America | Summer 2025</p>
-                <p>
-                    Directed logistical operations for camp facilities. Managed volunteer staff, 
-                    oversaw safety evaluations, and coordinated communications across multiple units.
-                </p>
-            </div>
-
-            <details>
-                    <summary>View More Previous Experience</summary>
-                    <div class="expanded-content">
-                        <div class="card">
-                            <span class="status-flag">Previous Role - Seasonal</span>
-                            <h3>Business IT Specialist</h3>
-                            <p class="job-title">Eithinc Systems Inc.; Tech2Door | July 2021 - November 2024</p>
-                            <p>
-                                Integrated full-stack IT infrastructure including servers, firewalls, and payment 
-                                systems for business clients. Administered Windows Active Directory and Exchange Online 
-                                environments while performing hardware repair and troubleshooting for mixed Windows and Mac workstations.
-                            </p>
-                        </div>
-
-                    <div class="card">
-                       <span class="status-flag">Previous Role - First Job</span>
-                         <h3>Host & Busser</h3>
-                         <p class="job-title">Papa Franks Italian Restaurant  | June 2021 - March 2022</p>
-                         <p>
-                            Managed front-of-house logistics including guest seating, reservations, 
-                            and phone orders to ensure efficient service flow. Maintained strict 
-                          sanitization protocols and facilitated clear communication between guests and staff.
-                          </p>
-                     </div>
-                    </div>
-                </details>
-
-        </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <h2>Technical Projects</h2>
-        <div class="card-grid">
-            <div class="card">
-                <h4>Home Lab</h4>
-                <p class="job-title">A Ongoing Personal Project Implemeting Differnt Technologies</p>
-                
-            </div>
-            <div class="card">
-                <h4>National Conference Tech Co-Chair</h4>
-                <p class="job-title">Scale: 950+ Attendees | Impact: Operational Efficiency</p>
-                <p style="margin-bottom: 10px;">Led technology operations and AV coordination for a major national conference.</p>
-                
-                <details>
-                    <summary>View Technical Specifications</summary>
-                    <div class="expanded-content">
-                        <ul>
-                            <li><strong>Infrastructure:</strong> Partnered with university IT for secure Logon IDs and classroom support.</li>
-                            <li><strong>Digital Assets:</strong> Built and maintained the conference website and attendee resource portal.</li>
-                            <li><strong>Coordination:</strong> Managed cross-functional teams to ensure seamless Mass Gathering events.</li>
-                        </ul>
-                    </div>
-                </details>
-            </div>
-
-            <div class="card">
-                <h4>Live Streaming Infrastructure</h4>
-                <p class="job-title">Budget: $11,500 | Role: Project Lead</p>
-                <p style="margin-bottom: 10px;">Designed and implemented a permanent broadcasting system for community services.</p>
-                
-                <details>
-                    <summary>View Implementation Details</summary>
-                    <div class="expanded-content">
-                        <ul>
-                            <li><strong>Design:</strong> Created network architecture for low-latency high-definition streaming.</li>
-                            <li><strong>Fundraising:</strong> Presented project proposals to stakeholders to secure $11.5k in funding.</li>
-                            <li><strong>Training:</strong> Developed documentation and trained volunteers on system operation.</li>
-                        </ul>
-                    </div>
-                </details>
-            </div>
-
-            <div class="card">
-                <h4>Story Byte Startup</h4>
-                <p class="job-title">Context: Sangamon CEO Program</p>
-                <p style="margin-bottom: 10px;">Founded an interactive education startup focused on collaborative writing tools.</p>
-                
-                <details>
-                    <summary>View Business Logic</summary>
-                    <div class="expanded-content">
-                        <ul>
-                            <li><strong>Recognition:</strong> Finalist in "CEO vs. Sharks" Business Startup Competition.</li>
-                            <li><strong>Product:</strong> Designed app concepts to assist teachers with writing and reading collaboration.</li>
-                            <li><strong>Skillset:</strong> Market analysis, pitch deck creation, and public speaking.</li>
-                        </ul>
-                    </div>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <section id="awards" class="projects">
-        <h2>Honors & Awards</h2>
-        <div class="card-grid">
-            <div class="card">
-                <h4>Eagle Scout</h4>
-                <p class="job-title">Boy Scouts of America | April 2023</p>
-                <p>Highest achievement or rank attainable in the Scouts BSA program.</p>
-            </div>
-            
-            <div class="card">
-                <h4>Vigil Honor</h4>
-                <p class="job-title">Order of the Arrow | October 2023</p>
-                <p>High mark of distinction and recognition reserved for those with exceptional service.</p>
-            </div>
-
-            <div class="card">
-                <h4>Founders Award</h4>
-                <p class="job-title">Order of the Arrow | January 2022</p>
-                <p>Recognizes Arrowmen who have given outstanding service to their lodge.</p>
-            </div>
-        </div>
-    </section>
-
-<section id="education" class="education">
-        <h2>Education</h2>
-        <div class="card-grid">
-            <div class="card">
-                <h3>Computer Networking & Telecommunications Management B.S.</h3>
-                <p class="job-title">Illinois State University - School of Information Technology | May 2027</p>
-                <p style="margin-bottom: 10px;">
-                    Serve as Level 2/3 escalation point within ServiceNow Yokohama. Mentor a specialized team of 15+ student technicians 
-                    while managing workstation lifecycles across Microsoft SCCM, Intune, and Jamf Pro environments.
-                </p>
-                
-                <details>
-                    <summary>View Classes Taken</summary>
-                    <div class="expanded-content">
-                        <ul>
-                            <li><strong>IT 300 Level:</strong> Package enterprise applications with custom detection logic. Maintain application, driver, and security health for 2,000+ direct endpoints.</li>
-                            <li><strong>IT 200 Level</strong> Create and link Group Policy Objects (GPOs), administer AD groups/OUs, and manage Print Server 2022 queues.</li>
-                            <li><strong>IT 100 Level</strong> Execute sensitive data approvals, VIP entitlements, and onboarding/offboarding workflows.</li>
-                            <li><strong>General Education:</strong> Troubleshoot Intune/Jamf managed macOS fleets and Android devices. Support Cisco IP Communicator and VPN connectivity.</li>
-                        </ul>
-                    </div>
-                </details>
-            </div>
-
-            <div class="card">
-               <h3>High School Diploma</h3>
-                <p class="job-title">Sacred Heart - Griffin (Springfield, IL) | Class of 2023</p>
-                <p>
-                    Compled four years of courcework at SHG, a college preparatory school with a focus on Live Broadcasting, Video Production, Introduction to Java Programing,
-                    and General Education in English, Mathematics, Science, and Social Studies.
-                </p>
-            </div>
-        </div>
-    </section>
-
-<section id="about" class="about">
-    <h2>Technical Competencies</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px;">
-        
-        <div>
-            <h3 style="margin-bottom: 15px;">Endpoint Management</h3>
-            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <span class="tech-tag">Microsoft SCCM</span>
-                <span class="tech-tag">Microsoft Intune</span>
-                <span class="tech-tag">Jamf Pro</span>
-                <span class="tech-tag">Group Policy (GPO)</span>
-            </div>
-        </div>
-
-        <div>
-            <h3 style="margin-bottom: 15px;">Identity & Infrastructure</h3>
-            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <span class="tech-tag">Windows Server</span>
-                <span class="tech-tag">Active Directory</span>
-                <span class="tech-tag">Exchange Online</span>
-                <span class="tech-tag">Print Management</span>
-            </div>
-        </div>
-
-        <div>
-            <h3 style="margin-bottom: 15px;">Network & Telecom</h3>
-            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <span class="tech-tag">Ubiquiti Unifi</span>
-                <span class="tech-tag">Cloudflare</span>
-                <span class="tech-tag">Vodia PBX</span>
-                <span class="tech-tag">VPN Config</span>
-            </div>
-        </div>
-
-        <div>
-            <h3 style="margin-bottom: 15px;">Operations Stack</h3>
-            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <span class="tech-tag">ServiceNow Yokohama</span>
-                <span class="tech-tag">Ivanti Cherwell</span>
-                <span class="tech-tag">Zoho ServiceDesk+ (Local)</span>
-                <span class="tech-tag">ScreenConnect</span>
-                <span class="tech-tag">Atlassian Confluence</span>
-                <span class="tech-tag">macOS / Windows</span>
-            </div>
-        </div>
-
+  <!-- HERO -->
+  <section id="home">
+    <p class="eyebrow">IT Professional &amp; Team Leader</p>
+    <h2>Driven by Technical Excellence &amp; <em>Strategic Operations.</em></h2>
+    <p>A versatile technology specialist with a background spanning enterprise infrastructure, network architecture, and entrepreneurial leadership. From founding startups to managing campus-wide endpoint operations, dedicated to building resilient systems and mentoring high-performance teams to solve complex challenges.</p>
+    <div class="btn-row">
+      <a href="#experience" class="btn btn-primary">View Work History</a>
+      <a href="assets/Short_Ethan-Resume.pdf" target="_blank" class="btn btn-outline">Download Resume</a>
     </div>
-</section>
+  </section>
 
-    <section id="contact" class="contact">
-        <h2>Initiate Contact</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
-            <div>
-                <h3 style="margin-bottom: 20px;">Direct Communication</h3>
-                <div style="margin-bottom: 20px;">
-                    <p class="job-title">Email Address</p>
-                    <a href="mailto:ethan@emshort.net" style="color: var(--text-main); text-decoration: none; font-size: 18px;">
-                        ethan@emshort.net
-                    </a>
-                </div>
-                <div style="margin-bottom: 20px;">
-                    <p class="job-title">Network Profile</p>
-                    <a href="https://linkedin.com/in/ethan-m-short" target="_blank" style="color: var(--text-main); text-decoration: none;">
-                        linkedin.com/in/ethan-m-short
-                    </a>
-                </div>
-            </div>
-            </section>
-        </main>
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <p class="section-label reveal">Work History</p>
+    <h2 class="section-title reveal">Professional <em>Experience</em></h2>
+
+    <div class="exp-entry reveal">
+      <div class="exp-meta">
+        <p class="exp-period">Jan 2024 – Present</p>
+        <span class="exp-badge">Current Role</span>
+      </div>
+      <div class="exp-body">
+        <h3>Endpoint Support — Lead Technician</h3>
+        <p class="org">Illinois State University · Office of Technology Solutions</p>
+        <ul>
+          <li>Mentor a team of 15+ student technicians with focus on technical and personal skill development.</li>
+          <li>Provision user accounts, group membership, and access with Active Directory for a 10,000+ customer base.</li>
+          <li>Lead maintenance of hardware and software for a network of 60+ campus student release stations.</li>
+          <li>Coordinate resources, track progress, and implement creative solutions for various department projects.</li>
+          <li>Liaise between technical teams and leadership to translate department goals into technical specifications.</li>
+        </ul>
+      </div>
     </div>
 
-   <!-- <div id="docs-search-container"></div>
-    <script type="module">
-       import { NLWebDropdownChat } from 'https://dark-base-d4a8-nlweb.ethan-38f.workers.dev/nlweb-dropdown-chat.js';
+    <div class="exp-entry reveal">
+      <div class="exp-meta">
+        <p class="exp-period">2024 – Present</p>
+        <span class="exp-badge">Current Role</span>
+      </div>
+      <div class="exp-body">
+        <h3>Secretary of Information Technology</h3>
+        <p class="org">Illinois State University · Student Government Association</p>
+        <p>Serve as the SGA's primary technology officer and chair the Student Technology Advisory Committee. Advocate for student technology needs and advise on campus-wide IT policy and infrastructure decisions.</p>
+      </div>
+    </div>
 
-       const chat = new NLWebDropdownChat({
-         containerId: 'docs-search-container',
-         site: 'https://dark-base-d4a8-nlweb.ethan-38f.workers.dev',
-         placeholder: 'QUERY ARCHIVE...', 
-         endpoint: 'https://dark-base-d4a8-nlweb.ethan-38f.workers.dev'
-       });
-    </script> -->
+    <div class="exp-entry reveal">
+      <div class="exp-meta">
+        <p class="exp-period">Nov 2024 – Jul 2025</p>
+        <span class="exp-badge">Previous Role</span>
+      </div>
+      <div class="exp-body">
+        <h3>Network &amp; Telecommunication Technician</h3>
+        <p class="org">Womack Technologies</p>
+        <ul>
+          <li>Executed end-to-end network deployments for business clients including cabling, switching, and firewall configuration.</li>
+          <li>Integrated Windows Server environments and managed Active Directory and Exchange Online.</li>
+          <li>Configured and supported VoIP systems using Vodia PBX.</li>
+          <li>Troubleshot network and connectivity issues on-site across LAN/WAN environments.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-entry reveal">
+      <div class="exp-meta">
+        <p class="exp-period">Summer 2025</p>
+        <span class="exp-badge">Leadership</span>
+      </div>
+      <div class="exp-body">
+        <h3>Program Director &amp; Camp Commissioner</h3>
+        <p class="org">Boy Scouts of America</p>
+        <p>Directed logistical operations for camp facilities. Managed volunteer staff, oversaw safety evaluations, and coordinated communications across multiple units.</p>
+      </div>
+    </div>
+
+    <div class="exp-entry reveal">
+      <div class="exp-meta">
+        <p class="exp-period">Jun 2021 – Aug 2023</p>
+        <span class="exp-badge">Previous Role</span>
+      </div>
+      <div class="exp-body">
+        <h3>Data and Networking Specialist</h3>
+        <p class="org">Eithinc Systems Inc. · Tech2Door</p>
+        <ul>
+          <li>Integration of servers, workstations, LAN networks, firewalls, and payment systems for business clients.</li>
+          <li>Management of Windows Active Directory, Microsoft Exchange Online, and security permissions.</li>
+          <li>Collaborated and troubleshot with a team on issues in business and residential environments.</li>
+          <li>Performed hardware and software maintenance and home/business PC and Mac repair.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-entry reveal">
+      <div class="exp-meta">
+        <p class="exp-period">Jun 2021 – Mar 2022</p>
+        <span class="exp-badge">First Job</span>
+      </div>
+      <div class="exp-body">
+        <h3>Host &amp; Busser</h3>
+        <p class="org">Papa Frank's Italian Restaurant</p>
+        <ul>
+          <li>Welcomed and seated guests with menus promptly.</li>
+          <li>Answered the phone to take orders and reservations and ensured guests had correct information.</li>
+          <li>Followed sanitization procedures between guests.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <p class="section-label reveal">Selected Work</p>
+    <h2 class="section-title reveal">Technical <em>Projects</em></h2>
+
+    <div class="proj-entry reveal">
+      <p class="proj-num">001</p>
+      <div class="proj-body">
+        <h3>Home Lab</h3>
+        <p class="proj-meta">Ongoing Personal Project</p>
+        <p>A hybrid sandbox environment simulating corporate infrastructure — Unraid for storage and Docker containers, a Windows Server AD domain, and a UniFi VLAN-segmented network. Full write-up on the <a href="homelab.html" style="color:var(--accent);">Home Lab page &rarr;</a></p>
+      </div>
+    </div>
+
+    <div class="proj-entry reveal">
+      <p class="proj-num">002</p>
+      <div class="proj-body">
+        <h3>National Conference Tech Co-Chair</h3>
+        <p class="proj-meta">950+ Attendees · Operational Efficiency</p>
+        <p>Led technology operations and AV coordination for a major national conference.</p>
+        <ul>
+          <li><strong>Infrastructure:</strong> Partnered with university IT for secure logon IDs and classroom support.</li>
+          <li><strong>Digital Assets:</strong> Built and maintained the conference website and attendee resource portal.</li>
+          <li><strong>Coordination:</strong> Managed cross-functional teams to ensure seamless mass gathering events.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="proj-entry reveal">
+      <p class="proj-num">003</p>
+      <div class="proj-body">
+        <h3>Live Streaming Infrastructure</h3>
+        <p class="proj-meta">Blessed Sacrament Parish · Eagle Scout Project</p>
+        <ul>
+          <li>Developed a temporary live streaming setup for parishioners to watch services from home during 2020.</li>
+          <li>Presented a project to the parish to raise $11,500 to install a permanently networked live streaming system.</li>
+          <li>Guided volunteers on the use of the new system after it was installed.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="proj-entry reveal">
+      <p class="proj-num">004</p>
+      <div class="proj-body">
+        <h3>Story Byte</h3>
+        <p class="proj-meta">Sangamon CEO Program · "CEO vs. Sharks" Finalist</p>
+        <p><em>Story Writing, together. The Future of Interactive Education.</em> — An app to help teachers teach writing, reading, and collaboration with elementary students.</p>
+        <ul>
+          <li>Developed interpersonal and networking skills interacting with business and community leaders.</li>
+          <li>Improved analytical writing and presentation skills through the CEO program.</li>
+          <li>Pitched the concept in the "CEO vs. Sharks" business startup competition as a finalist.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section id="awards">
+    <p class="section-label reveal">Recognition</p>
+    <h2 class="section-title reveal">Honors &amp; <em>Awards</em></h2>
+    <div class="awards-grid reveal">
+      <div class="award-card">
+        <h3>Eagle Scout</h3>
+        <p class="award-org">Boy Scouts of America · April 2023</p>
+        <p>Highest rank attainable in Scouts BSA — earned by fewer than 4% of all Scouts.</p>
+      </div>
+      <div class="award-card">
+        <h3>Vigil Honor</h3>
+        <p class="award-org">Order of the Arrow · October 2023</p>
+        <p>High mark of distinction reserved for those demonstrating exceptional service to Scouting.</p>
+      </div>
+      <div class="award-card">
+        <h3>Founders Award</h3>
+        <p class="award-org">Order of the Arrow · January 2022</p>
+        <p>Recognizes Arrowmen who have given outstanding service to their lodge.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <p class="section-label reveal">Academic Background</p>
+    <h2 class="section-title reveal"><em>Education</em></h2>
+
+    <div class="edu-entry reveal">
+      <div class="edu-year">May 2027</div>
+      <div class="edu-body">
+        <h3>B.S. Computer Networking &amp; Telecommunications Management</h3>
+        <p class="school-name">Illinois State University · School of Information Technology</p>
+        <p>Focused coursework spanning enterprise networking, systems administration, telecommunications infrastructure, and IT operations management. Currently working full-time in parallel with studies. Active in student government as Secretary of Information Technology and chair of the Student Technology Advisory Committee.</p>
+      </div>
+    </div>
+
+    <div class="edu-entry reveal">
+      <div class="edu-year">Class of 2023</div>
+      <div class="edu-body">
+        <h3>High School Diploma</h3>
+        <p class="school-name">Sacred Heart–Griffin · Springfield, IL</p>
+        <p>College preparatory school with specializations in Live Broadcasting, Video Production, and Introduction to Java Programming. Strong foundation in STEM and communications.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPETENCIES -->
+  <section id="about">
+    <p class="section-label reveal">Tools &amp; Technologies</p>
+    <h2 class="section-title reveal">Technical <em>Competencies</em></h2>
+    <div class="competencies-grid reveal">
+      <div class="comp-group">
+        <h3>Endpoint Management</h3>
+        <ul>
+          <li>Microsoft SCCM</li>
+          <li>Microsoft Intune</li>
+          <li>Jamf Pro</li>
+          <li>Group Policy (GPO)</li>
+        </ul>
+      </div>
+      <div class="comp-group">
+        <h3>Identity &amp; Infrastructure</h3>
+        <ul>
+          <li>Windows Server</li>
+          <li>Active Directory</li>
+          <li>Exchange Online</li>
+          <li>Print Management</li>
+          <li>Hyper-V</li>
+        </ul>
+      </div>
+      <div class="comp-group">
+        <h3>Network &amp; Telecom</h3>
+        <ul>
+          <li>Ubiquiti UniFi</li>
+          <li>Cloudflare</li>
+          <li>Vodia PBX</li>
+          <li>VPN Configuration</li>
+          <li>VLAN Segmentation</li>
+        </ul>
+      </div>
+      <div class="comp-group">
+        <h3>Operations Stack</h3>
+        <ul>
+          <li>ServiceNow Yokohama</li>
+          <li>Ivanti Cherwell</li>
+          <li>Zoho ServiceDesk+ (Local)</li>
+          <li>ScreenConnect</li>
+          <li>Atlassian Confluence</li>
+        </ul>
+      </div>
+      <div class="comp-group">
+        <h3>Platforms</h3>
+        <ul>
+          <li>Windows 10 / 11</li>
+          <li>macOS</li>
+          <li>Android (MDM)</li>
+          <li>Unraid OS</li>
+          <li>Docker</li>
+        </ul>
+      </div>
+      <div class="comp-group">
+        <h3>Web &amp; Development</h3>
+        <ul>
+          <li>HTML5 / CSS3</li>
+          <li>Python</li>
+          <li>GitHub</li>
+          <li>Cloudflare Workers</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-grid">
+      <div class="contact-blurb reveal">
+        <p class="section-label">Get in Touch</p>
+        <h2 class="section-title" style="margin-bottom:8px;">Initiate <em>Contact</em></h2>
+        <p>Open to full-time roles, internships, and freelance engagements in enterprise IT, network engineering, and systems administration.</p>
+      </div>
+      <div class="contact-links reveal">
+        <a href="mailto:ethan@emshort.net" class="contact-link">
+          <div>
+            <p class="link-label">Email Address</p>
+            <p class="link-value">ethan@emshort.net</p>
+          </div>
+          <span class="arrow">&rarr;</span>
+        </a>
+        <a href="https://linkedin.com/in/ethan-m-short" target="_blank" class="contact-link">
+          <div>
+            <p class="link-label">Network Profile</p>
+            <p class="link-value">linkedin.com/in/ethan-m-short</p>
+          </div>
+          <span class="arrow">&rarr;</span>
+        </a>
+        <a href="https://github.com/EthanMShort" target="_blank" class="contact-link">
+          <div>
+            <p class="link-label">GitHub</p>
+            <p class="link-value">github.com/EthanMShort</p>
+          </div>
+          <span class="arrow">&rarr;</span>
+        </a>
+        <a href="assets/Short_Ethan-Resume.pdf" target="_blank" class="contact-link">
+          <div>
+            <p class="link-label">Resume</p>
+            <p class="link-value">Download PDF</p>
+          </div>
+          <span class="arrow">&darr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER inside #wrapper so it clears the sidebar -->
+  <footer>
+    <span>&copy; 2026 Ethan Short</span>
+    <span>Springfield, IL &middot; ISU Class of 2027</span>
+  </footer>
+
+</div><!-- /wrapper -->
+
+<script>
+  // Active nav on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('#sidebar nav a');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(a => a.classList.remove('active'));
+        const a = document.querySelector(`#sidebar nav a[href="#${e.target.id}"]`);
+        if (a) a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-25% 0px -65% 0px' });
+  sections.forEach(s => io.observe(s));
+
+  // Scroll reveal — opt-in so content is always visible if JS/IO fails
+  document.body.classList.add('js-reveal');
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealIO.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -60px 0px' });
+  revealEls.forEach(el => revealIO.observe(el));
+</script>
+
 </body>
 </html>
