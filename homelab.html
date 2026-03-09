@@ -1,171 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/assets/es_ favicon.png">
-    <title>Ethan Short - Home Lab</title>
-    <link rel="stylesheet" href="/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="assets/es_ favicon.png" />
+  <title>Ethan Short — Home Lab</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="app">
-        <aside class="sidebar">
-            <div class="sidebar-content">
-                <div class="profile-card">
-                    <div class="profile-info">
-                        <h1>Ethan Short</h1>
-                        <p class="profile-title">Home Lab & Projects</p>
-                    </div>
-                </div>
 
-                <nav class="nav-links">
-                    <a href="index.html">← Return to Main</a>
-                    <details class="nav-group" open>
-                        <summary>Projects</summary>
-                        <a href="index.html#projects" class="nav-child">Technical Projects</a>
-                        <a href="#overview" class="nav-child active">Home Lab</a>
-                    </details>
-                </nav>
+<!-- ── SIDEBAR ── -->
+<div id="sidebar">
+  <h1>Ethan Short</h1>
+  <p class="subtitle">Computer Networking &amp;<br>Telecommunication Management</p>
+  <p class="school">Illinois State University · May 2027</p>
 
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/ethan-m-short" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/EthanMShort" target="_blank">GitHub</a>
-                </div>
-            </div>
-        </aside>
+  <div class="availability">
+    <span class="availability-dot"></span>
+    Available for Opportunities
+  </div>
 
-       <main class="main-content">
-            <section id="overview" class="hero">
-                <div>
-                    <p class="hero-eyebrow">SANDBOX // SELF-HOSTED</p>
-                    <h1>The Home Lab</h1>
-                    <p>
-                        This is my personal playground for testing enterprise tech and hosting services for my home. 
-                        It’s a hybrid setup that lets me simulate a corporate Windows environment while running fun, 
-                        modern apps in Docker.
-                    </p>
-                    <p style="margin-top: 15px;">
-                        The core runs on <strong>Unraid</strong> for flexible storage and containers (like <strong>Plex</strong> 
-                        and <strong>HomeAssistant</strong>), while a separate <strong>Windows Server</strong> environment handles 
-                        Active Directory and DNS. The entire network is secured and segmented using <strong>Ubiquiti UniFi</strong> gear.
-                    </p>
-                </div>
-            </section>
+  <nav>
+    <p class="nav-group-label">Navigation</p>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+    </ul>
+    <p class="nav-group-label">Projects</p>
+    <ul>
+      <li><a href="index.html#projects">Technical Projects</a></li>
+      <li><a href="homelab.html" class="active">Home Lab</a></li>
+    </ul>
+    <p class="nav-group-label">&nbsp;</p>
+    <ul>
+      <li><a href="index.html#awards">Awards</a></li>
+      <li><a href="index.html#education">Education</a></li>
+      <li><a href="index.html#about">Technical Competencies</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-            <section id="hardware" class="experience">
-                <h2>The Stack</h2>
-                <div class="card-grid">
-                    
-                    <div class="card">
-                        <span class="status-flag">NAS01</span>
-                        <h3>Compute & Storage</h3>
-                        <p class="job-title">Unraid OS | Lenovo ThinkStation P520 | 5TB HDD (RAID1)</p>
-                        <p style="margin-bottom: 10px;">
-                            My primary server runs Unraid to handle NAS duties and Docker containers. 
-                            I also plan to run Hyper-V instances for Windows Server 2022 to practice AD administration.
-                        </p>
-                        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
-                            <span class="tech-tag">Unraid OS</span>
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Windows Server</span>
-                            <span class="tech-tag">Hyper-V</span>
-                        </div>
-                    </div>
+  <div class="sidebar-footer">
+    <a href="https://linkedin.com/in/ethan-m-short" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://github.com/EthanMShort" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      GitHub
+    </a>
+    <a href="assets/Short_Ethan-Resume.pdf" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+      Resume PDF
+    </a>
+    <a href="sitemap.xml" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      Site Map
+    </a>
+  </div>
+</div>
 
-                    <div class="card">
-                        <span class="status-flag">GATEWAY01</span>
-                        <h3>Network Infrastructure</h3>
-                        <p class="job-title">Ubiquiti UniFi</p>
-                        <p style="margin-bottom: 10px;">
-                            A modest UniFi stack (UCG Max) managing multiple VLANs. This keeps my trusted lab devices 
-                            separate from the IoT chaos.
-                        </p>
-                        <details>
-                            <summary>View Network Details</summary>
-                            <div class="expanded-content">
-                                <ul>
-                                    <li><strong>Gateway:</strong> UniFi Cloud Gateway Max</li>
-                                    <li><strong>Switching:</strong> Using the 2.5 GbE RJ45 LAN Ports on the UCG Max for now</li>
-                                    <li><strong>Wireless:</strong> Unifi U7 Pro for 2.4 GHz, 5 GHz, and 6 GHz connectivity</li>
-                                    <li><strong>Segmentation:</strong> Main (Standard Network), HomeLab (Sepreate NAS01, HomeAssistant, and other appliances), Guest, IoT Network (For Smart Plugs and Lights), Isolated (For dockers that I only want to have acces to external internet, nothing internal)</li>
-                                </ul>
-                            </div>
-                        </details>
-                    </div>
-                </div>
-            </section>
+<!-- ── MAIN ── -->
+<div id="wrapper">
 
-            <section id="services" class="projects">
-                <h2>Services & Automation</h2>
-                <div class="card-grid">
-                    
-                    <div class="card">
-                        <span class="status-flag">ESHOME</span>
-                        <h3>Home Automation</h3>
-                        <p class="job-title">Home Assistant + Raspberry Pi</p>
-                        <p>
-                            Running on a dedicated Pi, HomeAssistant ties all my smart devices together with 
-                            local-first logic, avoiding cloud dependency where possible.
-                        </p>
-                        <details>
-                            <summary>View Home Assistant Details</summary>
-                            <div class="expanded-content">
-                                <ul>
-                                    <li><strong>Devices:</strong> Govee Lights, TP-Link Smart Plugs, Zigbee Tempature/Humidity Sensors</li>
-                                    <li><strong>Hardware:</strong> Raspberry Pi 4, Snoff Zigbee USB Stick</li>
-                                </ul>
-                            </div>
-                        </details>
-                    </div>
+  <!-- HERO -->
+  <section id="overview">
+    <p class="eyebrow">Sandbox // Self-Hosted</p>
+    <h2>The Home <em>Lab</em></h2>
+    <p>My personal playground for testing enterprise tech and hosting services at home. A hybrid setup that simulates a corporate Windows environment while running modern apps in Docker — all tied together on a segmented UniFi network.</p>
+  </section>
 
-                    <div class="card">
-                        <h4>Media Streaming</h4>
-                        <p class="job-title">Plex Media Server</p>
-                        <p>
-                            Hardware-accelerated transcoding for streaming movies and music to any device in the house. 
-                            Backed by the Unraid storage array.
-                        </p>
-                    </div>
+  <!-- HARDWARE -->
+  <section id="hardware">
+    <p class="section-label reveal">Infrastructure</p>
+    <h2 class="section-title reveal">The <em>Stack</em></h2>
 
-
-                </div>
-
-            </section>
-
-                        <section id="integrations" class="projects">
-                <h2>Interfaces & Integrations</h2>
-                <div class="card-grid">
-                    
-                    <div class="card">
-                        <span class="status-flag">INKDISP01</span>
-                        <h3>E-Ink Display</h3>
-                        <p class="job-title">GitHub + Cloudflare</p>
-                        <p>
-                           A Python-based dashboard for the Raspberry Pi Zero 2 W that transforms a Pimoroni Inky pHAT into an interactive information hub.
-                           Controlled via a local Flask web interface, it delivers real-time system analytics, local weather forecasts, and live Last.fm music tracking to an e-Ink display.
-                        </p>
-                        <div style="margin-top: 15px;">
-                            <a href="https://github.com/EthanMShort/inky-dashboard" target="_blank" class="btn" style="margin-left: 0; width: 100%; text-align: center;">
-                            View the GitHub Repo
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <span class="status-flag">WEB</span>
-                        <h4>Website - emshort.net</h4>
-                        <p class="job-title">Cloudflare + GitHub</p>
-                        <p>
-                            Using GitHub and Cloudflare Workers to host the website you are looking at!
-                        </p>
-                    </div>
-
-
-                </div>
-            </section>
-
-
-        </main>
+    <div class="proj-entry reveal">
+      <p class="proj-num">NAS01</p>
+      <div class="proj-body">
+        <h3>Compute &amp; Storage</h3>
+        <p class="proj-meta">Unraid OS &middot; Lenovo ThinkStation P520 &middot; 5TB HDD (RAID1)</p>
+        <p>Primary server handling NAS duties and Docker containers. Running Hyper-V instances for Windows Server 2022 to practice AD administration in a sandboxed environment.</p>
+        <ul>
+          <li><strong>OS:</strong> Unraid — flexible array management with Docker and VM support side by side</li>
+          <li><strong>Virtualization:</strong> Hyper-V guests for Windows Server 2022 AD/DNS lab work</li>
+          <li><strong>Storage:</strong> 5TB mirrored array for media and backup</li>
+        </ul>
+      </div>
     </div>
+
+    <div class="proj-entry reveal">
+      <p class="proj-num">GW01</p>
+      <div class="proj-body">
+        <h3>Network Infrastructure</h3>
+        <p class="proj-meta">Ubiquiti UniFi &middot; Multi-VLAN Segmentation</p>
+        <p>A UniFi stack built around the UCG Max managing five distinct VLANs — keeping lab gear, IoT devices, and isolated containers cleanly separated.</p>
+        <ul>
+          <li><strong>Gateway:</strong> UniFi Cloud Gateway Max</li>
+          <li><strong>Switching:</strong> 2.5 GbE RJ45 LAN ports on the UCG Max</li>
+          <li><strong>Wireless:</strong> UniFi U7 Pro — 2.4 GHz, 5 GHz, and 6 GHz</li>
+          <li><strong>VLANs:</strong> Main, HomeLab (NAS01 + appliances), Guest, IoT (smart plugs &amp; lights), Isolated (external-only Docker containers)</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" style="background:#f2efe9;">
+    <p class="section-label reveal">Docker &amp; Self-Hosted</p>
+    <h2 class="section-title reveal">Services &amp; <em>Automation</em></h2>
+
+    <div class="proj-entry reveal">
+      <p class="proj-num">HA01</p>
+      <div class="proj-body">
+        <h3>Home Automation</h3>
+        <p class="proj-meta">Home Assistant &middot; Raspberry Pi 4</p>
+        <p>Running on a dedicated Pi, Home Assistant ties all smart devices together with local-first logic — avoiding cloud dependency where possible.</p>
+        <ul>
+          <li><strong>Devices:</strong> Govee lights, TP-Link smart plugs, Zigbee temperature/humidity sensors</li>
+          <li><strong>Hardware:</strong> Raspberry Pi 4, Sonoff Zigbee USB stick</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="proj-entry reveal">
+      <p class="proj-num">PLX01</p>
+      <div class="proj-body">
+        <h3>Media Streaming</h3>
+        <p class="proj-meta">Plex Media Server &middot; Unraid Docker</p>
+        <p>Hardware-accelerated transcoding for streaming movies and music to any device in the house, backed by the Unraid storage array.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- INTEGRATIONS -->
+  <section id="integrations">
+    <p class="section-label reveal">Projects &amp; Interfaces</p>
+    <h2 class="section-title reveal">Integrations &amp; <em>Builds</em></h2>
+
+    <div class="proj-entry reveal">
+      <p class="proj-num">INK01</p>
+      <div class="proj-body">
+        <h3>E-Ink Dashboard</h3>
+        <p class="proj-meta">Raspberry Pi Zero 2 W &middot; Pimoroni Inky pHAT &middot; Python / Flask</p>
+        <p>A Python-based dashboard that transforms a Pimoroni Inky pHAT into an interactive information hub. Controlled via a local Flask web interface, it delivers real-time system analytics, local weather forecasts, and live Last.fm music tracking to an e-ink display.</p>
+        <ul>
+          <li><strong>Stack:</strong> Python, Flask, Pimoroni Inky library, OpenWeatherMap API, Last.fm API</li>
+          <li><strong>Hosting:</strong> Runs locally on the Pi Zero 2 W, deployed via GitHub</li>
+        </ul>
+        <div style="margin-top:16px;">
+          <a href="https://github.com/EthanMShort/inky-dashboard" target="_blank" class="btn btn-outline" style="margin-left:0;">
+            View GitHub Repo &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-entry reveal">
+      <p class="proj-num">WEB</p>
+      <div class="proj-body">
+        <h3>emshort.net</h3>
+        <p class="proj-meta">Cloudflare Workers &middot; GitHub Pages</p>
+        <p>The portfolio site you're on now — built with vanilla HTML/CSS, version-controlled on GitHub, and deployed automatically through Cloudflare Workers on every push to main.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>&copy; 2026 Ethan Short</span>
+    <span>Springfield, IL &middot; ISU Class of 2027</span>
+  </footer>
+
+</div><!-- /wrapper -->
+
+<script>
+  // Scroll reveal
+  document.body.classList.add('js-reveal');
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealIO.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -60px 0px' });
+  revealEls.forEach(el => revealIO.observe(el));
+</script>
+
 </body>
 </html>
