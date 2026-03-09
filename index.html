@@ -139,38 +139,48 @@
       </div>
     </div>
 
-    <div class="exp-entry reveal">
-      <div class="exp-meta">
-        <p class="exp-period">Jun 2021 – Aug 2023</p>
-        <span class="exp-badge">Previous Role</span>
+    <!-- "Show older" toggle -->
+    <button class="exp-show-more" id="exp-toggle" aria-expanded="false">
+      <span class="toggle-icon">+</span>
+      Show Earlier Experience
+    </button>
+
+    <!-- Collapsible older entries -->
+    <div class="exp-older" id="exp-older">
+      <div class="exp-entry">
+        <div class="exp-meta">
+          <p class="exp-period">Jun 2021 – Aug 2023</p>
+          <span class="exp-badge">Previous Role</span>
+        </div>
+        <div class="exp-body">
+          <h3>Data and Networking Specialist</h3>
+          <p class="org">Eithinc Systems Inc. · Tech2Door</p>
+          <ul>
+            <li>Integration of servers, workstations, LAN networks, firewalls, and payment systems for business clients.</li>
+            <li>Management of Windows Active Directory, Microsoft Exchange Online, and security permissions.</li>
+            <li>Collaborated and troubleshot with a team on issues in business and residential environments.</li>
+            <li>Performed hardware and software maintenance and home/business PC and Mac repair.</li>
+          </ul>
+        </div>
       </div>
-      <div class="exp-body">
-        <h3>Data and Networking Specialist</h3>
-        <p class="org">Eithinc Systems Inc. · Tech2Door</p>
-        <ul>
-          <li>Integration of servers, workstations, LAN networks, firewalls, and payment systems for business clients.</li>
-          <li>Management of Windows Active Directory, Microsoft Exchange Online, and security permissions.</li>
-          <li>Collaborated and troubleshot with a team on issues in business and residential environments.</li>
-          <li>Performed hardware and software maintenance and home/business PC and Mac repair.</li>
-        </ul>
+
+      <div class="exp-entry">
+        <div class="exp-meta">
+          <p class="exp-period">Jun 2021 – Mar 2022</p>
+          <span class="exp-badge">First Job</span>
+        </div>
+        <div class="exp-body">
+          <h3>Host &amp; Busser</h3>
+          <p class="org">Papa Frank's Italian Restaurant</p>
+          <ul>
+            <li>Welcomed and seated guests with menus promptly.</li>
+            <li>Answered the phone to take orders and reservations and ensured guests had correct information.</li>
+            <li>Followed sanitization procedures between guests.</li>
+          </ul>
+        </div>
       </div>
     </div>
 
-    <div class="exp-entry reveal">
-      <div class="exp-meta">
-        <p class="exp-period">Jun 2021 – Mar 2022</p>
-        <span class="exp-badge">First Job</span>
-      </div>
-      <div class="exp-body">
-        <h3>Host &amp; Busser</h3>
-        <p class="org">Papa Frank's Italian Restaurant</p>
-        <ul>
-          <li>Welcomed and seated guests with menus promptly.</li>
-          <li>Answered the phone to take orders and reservations and ensured guests had correct information.</li>
-          <li>Followed sanitization procedures between guests.</li>
-        </ul>
-      </div>
-    </div>
   </section>
 
   <!-- PROJECTS -->
@@ -418,6 +428,17 @@
     });
   }, { rootMargin: '0px 0px -60px 0px' });
   revealEls.forEach(el => revealIO.observe(el));
+
+  // Older experience toggle
+  const toggle = document.getElementById('exp-toggle');
+  const older  = document.getElementById('exp-older');
+  toggle.addEventListener('click', () => {
+    const isOpen = older.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen);
+    toggle.querySelector('.toggle-icon').textContent = isOpen ? '×' : '+';
+    toggle.childNodes[2].textContent = isOpen ? ' Hide Earlier Experience' : ' Show Earlier Experience';
+  });
 </script>
 
 </body>

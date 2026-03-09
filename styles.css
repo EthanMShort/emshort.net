@@ -28,7 +28,7 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--sans);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
   color: var(--text);
   background: var(--bg);
@@ -217,7 +217,7 @@ section:last-of-type { border-bottom: none; }
 #home h2 em { font-style: italic; color: var(--accent); }
 
 #home p {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--muted);
   max-width: 520px;
   line-height: 1.75;
@@ -280,20 +280,20 @@ section:last-of-type { border-bottom: none; }
 
 .exp-body h3 {
   font-family: var(--serif);
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 400;
   color: var(--text);
   margin-bottom: 3px;
 }
 
 .exp-body .org {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted);
   margin-bottom: 10px;
 }
 
 .exp-body p {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--muted);
   line-height: 1.7;
   margin-bottom: 10px;
@@ -303,11 +303,11 @@ section:last-of-type { border-bottom: none; }
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
 }
 
 .exp-body ul li {
-  font-size: 12.5px;
+  font-size: 14px;
   color: var(--muted);
   padding-left: 14px;
   position: relative;
@@ -318,6 +318,52 @@ section:last-of-type { border-bottom: none; }
   content: '›';
   position: absolute; left: 0;
   color: var(--accent);
+}
+
+/* ── Older experience toggle ── */
+.exp-older {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+}
+
+.exp-older.open {
+  max-height: 2000px;
+}
+
+.exp-show-more {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: none;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: color .15s;
+}
+
+.exp-show-more:hover { color: var(--accent); }
+
+.exp-show-more .toggle-icon {
+  font-size: 14px;
+  line-height: 1;
+  transition: transform .3s;
+}
+
+.exp-show-more.open .toggle-icon {
+  transform: rotate(45deg);
 }
 
 /* ────────────────────────────
@@ -347,7 +393,7 @@ section:last-of-type { border-bottom: none; }
 
 .proj-body h3 {
   font-family: var(--serif);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 400;
   color: var(--text);
   margin-bottom: 2px;
@@ -363,7 +409,7 @@ section:last-of-type { border-bottom: none; }
 }
 
 .proj-body p {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--muted);
   line-height: 1.7;
 }
@@ -373,11 +419,11 @@ section:last-of-type { border-bottom: none; }
   margin-top: 8px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
 }
 
 .proj-body ul li {
-  font-size: 12.5px;
+  font-size: 14px;
   color: var(--muted);
   padding-left: 14px;
   position: relative;
@@ -411,7 +457,7 @@ section:last-of-type { border-bottom: none; }
 
 .award-card h3 {
   font-family: var(--serif);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 400;
   color: var(--text);
   margin-bottom: 3px;
@@ -427,7 +473,7 @@ section:last-of-type { border-bottom: none; }
 }
 
 .award-card p {
-  font-size: 12.5px;
+  font-size: 14px;
   color: var(--muted);
   line-height: 1.65;
 }
@@ -456,7 +502,7 @@ section:last-of-type { border-bottom: none; }
 
 .edu-body h3 {
   font-family: var(--serif);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 400;
   color: var(--text);
   margin-bottom: 3px;
@@ -471,7 +517,7 @@ section:last-of-type { border-bottom: none; }
 }
 
 .edu-body p {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--muted);
   line-height: 1.7;
 }
@@ -509,7 +555,7 @@ section:last-of-type { border-bottom: none; }
 }
 
 .comp-group ul li {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text);
 }
 
@@ -526,7 +572,7 @@ section:last-of-type { border-bottom: none; }
 }
 
 .contact-blurb p {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--muted);
   line-height: 1.75;
   margin-top: 8px;
@@ -562,7 +608,7 @@ section:last-of-type { border-bottom: none; }
 }
 
 .contact-link .link-value {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text);
 }
 
