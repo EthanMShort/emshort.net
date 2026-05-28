@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service Unavailable — emshort.net</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #f7f5f2;
+      --bg-card:   #f0ede8;
+      --border:    #dedad3;
+      --text:      #1c1a17;
+      --muted:     #6e6860;
+      --accent:    #2d4a8a;
+      --red-bg:    #fdf0ee;
+      --red-bd:    #e8c4bd;
+      --red-tx:    #8b2c1a;
+      --mono:   'IBM Plex Mono', monospace;
+      --serif:  'DM Serif Display', serif;
+      --sans:   'Instrument Sans', sans-serif;
+    }
+
+    body {
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 520px;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--red-bg);
+      border: 1px solid var(--red-bd);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--red-tx);
+      margin-bottom: 20px;
+    }
+
+    .status-dot {
+      width: 6px; height: 6px;
+      background: #c0392b;
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(0.75); }
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--red-tx);
+      margin-bottom: 8px;
+      opacity: 0;
+      animation: fadeUp .4s ease .05s forwards;
+    }
+
+    .error-code {
+      font-family: var(--serif);
+      font-size: 88px;
+      font-weight: 400;
+      line-height: 1;
+      color: var(--border);
+      letter-spacing: -.02em;
+      margin-bottom: 6px;
+      opacity: 0;
+      animation: fadeUp .4s ease .15s forwards;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 12px;
+      opacity: 0;
+      animation: fadeUp .4s ease .25s forwards;
+    }
+
+    h1 em { font-style: italic; color: var(--accent); }
+
+    .description {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp .4s ease .35s forwards;
+    }
+
+    .diagnostic {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp .4s ease .45s forwards;
+    }
+
+    .diagnostic-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .diag-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .diag-row:last-child { border-bottom: none; }
+
+    .diag-key {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .diag-val {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text);
+      text-align: right;
+      word-break: break-all;
+    }
+
+    .diag-val.err { color: var(--red-tx); }
+    .diag-val.dim { color: var(--muted); }
+
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp .4s ease .55s forwards;
+    }
+
+    .btn {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 3px;
+      transition: all .18s;
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary { background: var(--accent); color: #fff; border: 1px solid var(--accent); }
+    .btn-primary:hover { background: #1e3566; }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      opacity: 0;
+      animation: fadeUp .4s ease .65s forwards;
+    }
+
+    footer a {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .15s;
+    }
+
+    footer a:hover { color: var(--accent); }
+
+    footer span {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--border);
+      margin: 0 8px;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      .error-code { font-size: 64px; }
+      h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+
+  <div class="status-badge">
+    <span class="status-dot"></span>
+    Service Disruption
+  </div>
+
+  <p class="eyebrow">Tunnel Error · Cloudflare Zero Trust</p>
+  <p class="error-code">503</p>
+  <h1>Service <em>Unavailable</em></h1>
+  <p class="description">
+    This application is temporarily unreachable. The Cloudflare tunnel is reachable, but the origin service is not responding. Please try again in a moment.
+  </p>
+
+  <div class="diagnostic">
+    <p class="diagnostic-label">Diagnostic Info</p>
+    <div class="diag-row">
+      <span class="diag-key">Requested Host</span>
+      <span class="diag-val" id="diag-host">—</span>
+    </div>
+    <div class="diag-row">
+      <span class="diag-key">Path</span>
+      <span class="diag-val" id="diag-path">—</span>
+    </div>
+    <div class="diag-row">
+      <span class="diag-key">Origin Response</span>
+      <span class="diag-val err">503 Service Unavailable</span>
+    </div>
+    <div class="diag-row">
+      <span class="diag-key">Client IP</span>
+      <span class="diag-val dim" id="diag-ip">Resolving…</span>
+    </div>
+    <div class="diag-row">
+      <span class="diag-key">Timestamp</span>
+      <span class="diag-val dim" id="diag-ts">—</span>
+    </div>
+    <div class="diag-row">
+      <span class="diag-key">Ray ID</span>
+      <span class="diag-val dim" id="diag-ray">—</span>
+    </div>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-primary" onclick="window.location.reload()">Retry Request</button>
+    <a href="https://emshort.net/" class="btn btn-outline">← Portfolio</a>
+  </div>
+
+</div>
+
+<footer>
+  <a href="https://emshort.net/">emshort.net</a>
+  <span>·</span>
+  <a href="https://emshort.net/#contact">Contact</a>
+</footer>
+
+<script>
+  // Host + path — real from the browser
+  document.getElementById('diag-host').textContent = location.hostname || location.host;
+  document.getElementById('diag-path').textContent = (location.pathname + location.search) || '/';
+
+  // Timestamp — local with timezone
+  const now = new Date();
+  document.getElementById('diag-ts').textContent = now.toLocaleString('en-US', {
+    month: 'short', day: 'numeric', year: 'numeric',
+    hour: '2-digit', minute: '2-digit', second: '2-digit',
+    hour12: false, timeZoneName: 'short'
+  });
+
+  // Ray ID — Cloudflare injects CF-Ray as a response header; it isn't readable via JS
+  // directly (response headers aren't exposed to page scripts), but Cloudflare also
+  // includes it in /cdn-cgi/trace which we fetch below. Pull it from there.
+  // If your zone has a Worker that sets a <meta cf-ray> tag, that also works.
+  const rayMeta = document.querySelector('meta[name="cf-ray"]');
+  if (rayMeta && rayMeta.content) {
+    document.getElementById('diag-ray').textContent = rayMeta.content;
+  }
+
+  // /cdn-cgi/trace — available on every Cloudflare zone, returns plain-text k=v pairs.
+  // Gives us: ip, ray (Ray ID), colo (data center), uag (user agent), loc (country)
+  fetch('/cdn-cgi/trace')
+    .then(r => r.text())
+    .then(text => {
+      const get = key => { const m = text.match(new RegExp('^' + key + '=(.+)$', 'm')); return m ? m[1].trim() : null; };
+
+      const ip   = get('ip');
+      const ray  = get('ray');
+      const colo = get('colo');
+
+      if (ip)  document.getElementById('diag-ip').textContent  = ip;
+      else     document.getElementById('diag-ip').textContent  = 'Not available';
+
+      // Ray ID: prefer meta tag (set server-side), fall back to trace
+      if (!rayMeta && ray) {
+        document.getElementById('diag-ray').textContent = colo ? `${ray} (${colo})` : ray;
+      } else if (!rayMeta) {
+        document.getElementById('diag-ray').textContent = 'Not available';
+      }
+    })
+    .catch(() => {
+      document.getElementById('diag-ip').textContent  = 'Not available';
+      if (!rayMeta) document.getElementById('diag-ray').textContent = 'Not available';
+    });
+</script>
+
+</body>
+</html>
